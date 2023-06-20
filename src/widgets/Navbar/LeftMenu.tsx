@@ -1,7 +1,7 @@
 import React from "react";
 import { Menu, MenuProps } from "antd";
 
-const LeftMenu = ({ mode }: { mode: string }) => {
+const LeftMenu = ({ mode }: { mode: any }) => {
   const items: MenuProps["items"] = [
     {
       label: "เกี่ยวกับบริษัท",

@@ -7,7 +7,7 @@ function Button({
   ...rest
 }: {
   text: string;
-  type?: string;
+  type?: any;
 }) {
   return (
     <BtnAntd type={type} className={styles.button} {...rest}>
