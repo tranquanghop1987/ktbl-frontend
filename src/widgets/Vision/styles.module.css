@@ -1,0 +1,60 @@
+.vision {
+  background: url("/assets/images/vision_1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 540px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.text {
+  margin-left: 200px;
+  padding: 80px;
+  max-width: 100%;
+}
+
+.title {
+  display: flex;
+  height: 36px;
+  flex-wrap: wrap;
+}
+
+.firstTitle {
+  color: #2b496b;
+}
+
+.secondTitle {
+  color: #ffffff;
+}
+
+.firstTitle, .secondTitle{
+    font-weight: 700;
+    font-size: 28px;
+}
+.content {
+  display: flex;
+  flex-wrap: nowrap;
+  color: #ffffff;
+  padding: 16px 0;
+  width: 520px;
+  font-weight: 400;
+  font-size: 18px;
+}
+.btnAboutCompany {
+  border-radius: 16px;
+  border: 1px solid;
+  height: 34px;
+}
+
+@media (max-width: 767px) {
+  .text {
+    margin-left: 20px;
+    padding: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .content{
+    width: 100%;
+  }
+}
