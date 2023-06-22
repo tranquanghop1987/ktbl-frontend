@@ -1,28 +1,31 @@
-"use client";
-import { Col, Row, Typography, Layout } from "antd";
-import styles from "./footer.module.css";
+'use client';
+import { Col, Row, Typography, Layout } from 'antd';
+import styles from './styles.module.css';
+
 const { Link } = Typography;
-function Footer() {
+
+const Footer = ({
+  telephone,
+  address,
+  facebook_page,
+  copyright,
+}: {
+  telephone: string;
+  address?: string;
+  facebook_page?: string;
+  copyright?: string;
+}) => {
   return (
     <>
-      <Row
-        gutter={[24, 24]}
-        className={styles.footer}
-        style={{ margin: "0" }}
-        align="top"
-      >
+      <Row gutter={24} className={styles.footer} style={{ margin: '0' }} align="top">
         <Col md={4} sm={12} xs={24}>
-          <Typography.Title level={3}>
-            ผลิตภัณฑ์กรุงไทยธุรกิจลีสซิ่ง
-          </Typography.Title>
+          <Typography.Title level={3}>ผลิตภัณฑ์กรุงไทยธุรกิจลีสซิ่ง</Typography.Title>
           <ul>
             <li>
               <Link>สินเชื่อรถบรรทุก รถหัวลาก และอุปกรณ์ต่อพ่วง​</Link>
             </li>
             <li>
-              <Link>
-                สินเชื่อเครื่องจักรก่อสร้าง (ที่จดทะเบียนกรมการขนส่ง)​
-              </Link>
+              <Link>สินเชื่อเครื่องจักรก่อสร้าง (ที่จดทะเบียนกรมการขนส่ง)​</Link>
             </li>
 
             <li>
@@ -59,9 +62,7 @@ function Footer() {
           </ul>
         </Col>
         <Col md={4} sm={12} xs={24}>
-          <Typography.Title level={3}>
-            ข่าวประชาสัมพันธ์ /บทความ​
-          </Typography.Title>
+          <Typography.Title level={3}>ข่าวประชาสัมพันธ์ /บทความ​</Typography.Title>
           <ul>
             <li>
               <Link>วิสัยทัศน์ / พันธกิจ​ ​ </Link>
@@ -90,9 +91,7 @@ function Footer() {
           </ul>
         </Col>
         <Col md={4} sm={12} xs={24}>
-          <Typography.Title level={3}>
-            ผลิตภัณฑ์กรุงไทยธุรกิจลีสซิ่ง
-          </Typography.Title>
+          <Typography.Title level={3}>ผลิตภัณฑ์กรุงไทยธุรกิจลีสซิ่ง</Typography.Title>
           <ul>
             <li>
               <Link>ข่าวประชาสัมพันธ์​​ ​</Link>
@@ -107,33 +106,29 @@ function Footer() {
         </Col>
         <Col md={4} sm={12} xs={24}>
           <Link href="/">
-            <img src="/assets/images/logo-footer.svg" alt="" />{" "}
+            <img src="/assets/images/logo-footer.svg" alt="" />{' '}
           </Link>
           <Typography.Title level={3}>ติดต่อเรา </Typography.Title>
           <ul>
             <li>
               <img src="/assets/icons/phone.svg" alt=""></img>
-              <Link className={styles.phone}> 02 407 1555​</Link>
+              <Link className={styles.phone}> {telephone} </Link>
             </li>
             <li>
               <img src="/assets/icons/facebook.svg" alt=""></img>
-              <Link>@KTBL​</Link>
+              <Link>{facebook_page}</Link>
             </li>
             <li>
               <img src="/assets/icons/location.svg" alt=""></img>
-
-              <Link>
-                591 อาคารสมัชชาวานิช 2 (UBCII) ชั้น 2 ถนนสุขุมวิท
-                แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพฯ 10110
-              </Link>
+              <Link>{address}</Link>
             </li>
           </ul>
         </Col>
       </Row>
-      <Layout.Footer style={{ textAlign: "center" }} className={styles.company}>
+      <Layout.Footer style={{ textAlign: 'center' }} className={styles.company}>
         © 2566 บริษัท กรุงไทยธุรกิจลีสซิ่ง จำกัด (มหาชน)
       </Layout.Footer>
     </>
   );
-}
+};
 export default Footer;

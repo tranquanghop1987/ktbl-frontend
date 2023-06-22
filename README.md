@@ -21,5 +21,9 @@ yarn develop
 - [FE] sử dụng async function để js parser cho nhanh.
 - [FE] 1 component có thể viết toàn bộ logic + data vào 1 file hoặc chia nhỏ thành 3 file riêng: UI, Logic và Data.
 
+## Develop
+https://strapi-backend-demo-84315734ec99.herokuapp.com/admin
+https://kbtl-frontend-042c99353e22.herokuapp.com
+
 ## Copyright
 KBTL Team

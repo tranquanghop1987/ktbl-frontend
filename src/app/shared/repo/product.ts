@@ -1,0 +1,1 @@
+const findProductBySlug = (slug: string) => {};

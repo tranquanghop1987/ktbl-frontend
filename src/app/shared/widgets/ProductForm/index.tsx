@@ -1,39 +1,24 @@
-"use client";
+'use client';
 
-import { Col, Row, Typography } from "antd";
-import React from "react";
-import { TextField } from "@mui/material";
-import Select from "../Select";
-import "./style.css";
-import Button from "../Button";
+import { Col, Row, Typography } from 'antd';
+import React from 'react';
+import { TextField } from '@mui/material';
+import Select from '../Select';
+import './style.css';
+import Button from '../Button';
 const ProductForm = (props: any) => {
   return (
     <div className="product-form">
       <Typography.Title level={3}>สมัครผลิตภัณฑ์</Typography.Title>
       <Row gutter={[28, 54]}>
         <Col md={12} xs={24}>
-          <TextField
-            id="outlined-basic"
-            label="ชื่อผู้ให้ติดต่อกลับ"
-            variant="outlined"
-            fullWidth
-          />
+          <TextField id="outlined-basic" label="ชื่อผู้ให้ติดต่อกลับ" variant="outlined" fullWidth />
         </Col>
         <Col md={12} xs={24}>
-          <TextField
-            id="outlined-basic"
-            label="เบอร์สำหรับติดต่อกลับ"
-            variant="outlined"
-            fullWidth
-          />
+          <TextField id="outlined-basic" label="เบอร์สำหรับติดต่อกลับ" variant="outlined" fullWidth />
         </Col>
         <Col md={12} xs={24}>
-          <TextField
-            id="outlined-basic"
-            label="ชื่อบริษัท / ชื่อผู้สมัคร"
-            variant="outlined"
-            fullWidth
-          />
+          <TextField id="outlined-basic" label="ชื่อบริษัท / ชื่อผู้สมัคร" variant="outlined" fullWidth />
         </Col>
         <Col md={12} xs={24}>
           <Select label="ประเภทธุรกิจ" />

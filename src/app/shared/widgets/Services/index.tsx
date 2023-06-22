@@ -1,24 +1,24 @@
-"use client";
-import Image from "next/image";
-import styles from "./style.module.css";
-import { Row, Col } from "antd";
+'use client';
+import Image from 'next/image';
+import styles from './style.module.css';
+import { Row, Col } from 'antd';
 
 const itemList = [
   {
-    label: "ประกันภัย",
-    imageUrl: "/assets/images/ourServices_1.png",
+    label: 'ประกันภัย',
+    imageUrl: '/assets/images/ourServices_1.png',
   },
   {
-    label: "ต่อภาษี",
-    imageUrl: "/assets/images/ourServices_1.png",
+    label: 'ต่อภาษี',
+    imageUrl: '/assets/images/ourServices_1.png',
   },
   {
-    label: "โอนกรรมสิทธิ์",
-    imageUrl: "/assets/images/ourServices_1.png",
+    label: 'โอนกรรมสิทธิ์',
+    imageUrl: '/assets/images/ourServices_1.png',
   },
   {
-    label: "โปรโมชั่น",
-    imageUrl: "/assets/images/ourServices_1.png",
+    label: 'โปรโมชั่น',
+    imageUrl: '/assets/images/ourServices_1.png',
   },
 ];
 
