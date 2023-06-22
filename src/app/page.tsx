@@ -8,8 +8,8 @@ import Vision from "@/app/shared/widgets/Vision";
 const Home = () => {
   return (
     <main style={{ position: "relative" }}>
+      <Navbar />
       <div className="banner">
-        <Navbar />
         <ScrollDown />
       </div>
       <div>

@@ -1,5 +1,11 @@
 .hproduct {
-  background: url('/assets/images/product-bg.jpg'), linear-gradient(180deg, #C3E7F3 0%, rgba(255, 255, 255, 0.69) 24.47%, rgba(255, 255, 255, 0) 43.46%);
+  background: url("/assets/images/product-bg.jpg"),
+    linear-gradient(
+      180deg,
+      #c3e7f3 0%,
+      rgba(255, 255, 255, 0.69) 24.47%,
+      rgba(255, 255, 255, 0) 43.46%
+    );
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -9,14 +15,14 @@
   align-items: center;
   padding-top: 54px;
   justify-content: space-between;
-
+  position: relative;
 }
-.productTitle{
-  color: #0B7199;
+.productTitle {
+  color: #0b7199;
   font-weight: 700;
   font-size: 24px;
 }
-.productList{
+.productList {
   display: flex;
   gap: 20px;
   justify-content: center;
@@ -26,23 +32,22 @@
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
-
 }
-.contentTitle{
-  color: #FFFFFF;
+.contentTitle {
+  color: #ffffff;
   font-size: 28px;
   font-weight: 700;
   text-align: center;
 }
-.contentDescription{
-  color: #E1E1E1;
+.contentDescription {
+  color: #e1e1e1;
   font-size: 18px;
   font-weight: 400;
 }
-.content{
+.content {
   margin-bottom: 64px;
   gap: 20px;
 }
-.active{
-  border-bottom: 4px solid  #0B7199 ;
+.active {
+  border-bottom: 4px solid #0b7199;
 }

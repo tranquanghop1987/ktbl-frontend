@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 const itemList = [
   {
-    imageUrl: "assets/images/new-detail-1.png",
+    imageUrl: "/assets/images/new-detail-1.png",
     tag: "ข่าวบริษัท",
     createDate: "15/12/2566",
     description:
@@ -23,7 +23,7 @@ const itemList = [
       "จัดจ้างบริการด้านงานทะเบียน - บจก. กิจมงคล คาร์ แอนด์ เซอร์วิสเซส",
   },
   {
-    imageUrl: "assets/images/new-detail-1.png",
+    imageUrl: "/assets/images/new-detail-1.png",
     tag: "ประกวดราคาจัดซื้อจัดจ้าง",
     createDate: "15/12/2566",
     description: "เคทีซีแถลงทิศทางการดำเนินธุรกิจปี 2566",
@@ -36,28 +36,28 @@ const itemList = [
       "เคทีซีจับมือมาสเตอร์การ์ดกระตุ้นยอดใช้จ่ายช่วงปลายปี มอบโปรแรงให้สมาชิกที่เซ็นทรัลและโรบินสันทั่วประเทศ",
   },
   {
-    imageUrl: "assets/images/new-detail-1.png",
+    imageUrl: "/assets/images/new-detail-1.png",
     tag: "รายการทรัพย์สินรอขาย",
     createDate: "15/12/2566",
     description:
       "เคทีซีจับมือมาสเตอร์การ์ดกระตุ้นยอดใช้จ่ายช่วงปลายปี มอบโปรแรงให้สมาชิกที่เซ็นทรัลและโรบินสันทั่วประเทศ",
   },
   {
-    imageUrl: "assets/images/new-detail-1.png",
+    imageUrl: "/assets/images/new-detail-1.png",
     tag: "รายการทรัพย์สินรอขาย",
     createDate: "15/12/2566",
     description:
       "เคทีซีจับมือมาสเตอร์การ์ดกระตุ้นยอดใช้จ่ายช่วงปลายปี มอบโปรแรงให้สมาชิกที่เซ็นทรัลและโรบินสันทั่วประเทศ",
   },
   {
-    imageUrl: "assets/images/new-detail-1.png",
+    imageUrl: "/assets/images/new-detail-1.png",
     tag: "รายการทรัพย์สินรอขาย",
     createDate: "15/12/2566",
     description:
       "เคทีซีจับมือมาสเตอร์การ์ดกระตุ้นยอดใช้จ่ายช่วงปลายปี มอบโปรแรงให้สมาชิกที่เซ็นทรัลและโรบินสันทั่วประเทศ",
   },
   {
-    imageUrl: "assets/images/new-detail-1.png",
+    imageUrl: "/assets/images/new-detail-1.png",
     tag: "รายการทรัพย์สินรอขาย",
     createDate: "15/12/2566",
     description:

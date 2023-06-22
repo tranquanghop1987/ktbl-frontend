@@ -1,23 +1,27 @@
 .bnProduct {
   background-image: url("/assets/images/supper.graphic-ktbl01+04.jpg");
-  height: 1024px;
   background-repeat: no-repeat;
+  height: 878px;
   background-size: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 62%, 0 70%);
-  gap: 28px;
+  clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
   padding-left: 80px;
   width: 100%;
+  padding-bottom: 100px;
 }
 .header {
   font-weight: 700;
   font-size: 24px;
   color: #262626;
+  margin-top: 33px;
+  margin-bottom: 4px;
 }
 .bnProduct h2 {
   color: #00a6e6;
   font-weight: 700;
   font-size: 50px;
   margin-bottom: 0;
+  text-shadow: 1px 1px 1px rgba(43, 73, 107, 0.12),
+    2px 4px 8px rgba(0, 128, 189, 0.2);
 }
 .bnProduct ul .itemTitle {
   color: #262626;
@@ -29,12 +33,69 @@
   font-weight: 400;
   font-size: 14px;
   width: 542px;
+  margin-top: 4px;
 }
 
 .bnProduct ul li {
   color: #484848;
   font-weight: 400;
   font-size: 14px;
+}
+
+.item {
+  margin-bottom: 12px;
+}
+
+.breadcrumb {
+  margin-top: 6px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.imageLeft {
+  text-align: center;
+}
+
+.imageLeft img {
+  max-width: 100%;
+}
+
+.contentRight {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  margin-right: auto;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 522px;
+}
+
+.productInfo {
+  background: url("/assets/images/product-bg-2.png");
+  height: 678px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+  clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.itemDetail {
+  display: flex;
+}
+
+.titleProduct {
+  color: #00a6e6;
+}
+
+.contentProduct {
+  color: #fff;
 }
 
 @media screen and (max-width: 600px) {
@@ -53,9 +114,15 @@
     margin-top: 356px;
     width: 90%;
   }
-}
-.breadcrumb {
-  margin-top: 6px;
-  font-weight: 400;
-  font-size: 16px;
+
+  .productInfo {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    background-position: top;
+    padding-left: 20px;
+  }
+
+  .content {
+    width: 390px;
+    padding: 10px;
+  }
 }
