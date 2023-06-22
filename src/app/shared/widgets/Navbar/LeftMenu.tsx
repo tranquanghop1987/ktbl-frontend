@@ -1,7 +1,7 @@
 import React from "react";
 import { Menu, MenuProps } from "antd";
 
-const LeftMenu = ({ mode }: { mode: any }) => {
+const LeftMenu = ({ mode, isModal }: { mode: any; isModal?: boolean }) => {
   const items: MenuProps["items"] = [
     {
       label: "เกี่ยวกับบริษัท",
@@ -125,7 +125,11 @@ const LeftMenu = ({ mode }: { mode: any }) => {
     <Menu
       mode={mode}
       items={items}
-      style={{ backgroundColor: "transparent", color: "#ffffff" }}
+      // openKeys={"mail"}
+      style={{
+        backgroundColor: "transparent",
+        color: isModal ? "#262626" : "#ffffff",
+      }}
     ></Menu>
   );
 };

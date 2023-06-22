@@ -1,4 +1,4 @@
-import Footer from "@/widgets/Footer";
+import Footer from "@/app/shared/widgets/Footer";
 import "./globals.css";
 // import { getGlobal } from "./widgets/Header/repo";
 // import { getStrapiMedia } from "./utils/api-helper";

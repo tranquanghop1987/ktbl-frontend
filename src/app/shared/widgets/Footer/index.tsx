@@ -5,7 +5,12 @@ const { Link } = Typography;
 function Footer() {
   return (
     <>
-      <Row gutter={24} className={styles.footer} align="top">
+      <Row
+        gutter={[24, 24]}
+        className={styles.footer}
+        style={{ margin: "0" }}
+        align="top"
+      >
         <Col md={4} sm={12} xs={24}>
           <Typography.Title level={3}>
             ผลิตภัณฑ์กรุงไทยธุรกิจลีสซิ่ง

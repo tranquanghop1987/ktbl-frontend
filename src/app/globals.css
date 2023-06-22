@@ -12,7 +12,7 @@
     0 6px 16px -11px rgba(0, 0, 0, 0.08);
   /* position: sticky; */
   top: 0;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   z-index: 99990;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.04));
@@ -22,6 +22,9 @@
   background-color: transparent;
   border-bottom: 0;
   padding: 0 4px 0 24px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 body {
   color: rgb(var(--foreground-rgb));
@@ -91,7 +94,9 @@ body {
 .ant-drawer-body .ant-menu-horizontal > .ant-menu-item:hover {
   border-bottom-color: transparent;
 }
-
+.ant-menu-light > .ant-menu.ant-menu-submenu > .ant-menu {
+  background-color: #00a6e6;
+}
 .username {
   display: none;
   margin-left: 8px;
@@ -100,7 +105,10 @@ body {
 @media (max-width: 767px) {
   .menuButton {
     display: block;
-    margin-right: 10px;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 0 10px 0 0;
+    color: #ffffff;
   }
 
   .leftMenu,
@@ -125,15 +133,17 @@ ul li {
 }
 /* banner */
 .banner {
-  background-image: url("/assets/images/banner-bg.png");
+  background-image: url("/assets/images/KTBL-logo2.png");
   background-repeat: no-repeat;
   width: 100%;
   height: 789px;
   background-size: cover;
+  background-position: center;
   position: relative;
 }
 .flex {
   display: flex;
+  flex-direction: row;
 }
 .flex-column {
   display: flex;
@@ -145,11 +155,17 @@ ul li {
 .justify-content-center {
   justify-content: center;
 }
+.flex-sb {
+  justify-content: space-between;
+}
 .mt-8 {
   margin-top: 8px;
 }
 .mt-64 {
   margin-top: 64px;
+}
+.align-baseline {
+  align-items: baseline;
 }
 .scroll-down {
   font-weight: 300;
@@ -182,3 +198,52 @@ ul li {
   background: #efefef;
   text-align: center;
 }
+.gap-20 {
+  gap: 20px;
+}
+.gap-8 {
+  gap: 8px;
+}
+
+@media (max-width: 576px) {
+  .banner {
+    background-image: url("/assets/images/banner-mobile.png");
+  }
+  .nav-header {
+    justify-content: space-between;
+    padding-inline: 10;
+  }
+}
+.navbar .ant-layout-header {
+  background-color: transparent;
+}
+.float-label {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 12px;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: 0.2s ease all;
+}
+input:not(:placeholder-shown) + .label-float {
+  top: -10px;
+  font-size: 10px;
+  background-color: white;
+  padding: 2px 4px;
+  font-weight: 600;
+}
+
+/* .label-float {
+  top: -10px;
+  font-size: 10px;
+  background-color: white;
+  padding: 2px 4px;
+  font-weight: 600;
+} */

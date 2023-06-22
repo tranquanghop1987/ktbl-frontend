@@ -1,8 +1,9 @@
-import Navbar from "@/widgets/Navbar";
-import HomeProduct from "@/widgets/Product";
-import ScrollDown from "@/widgets/ScroolDown";
-import OurServices from "@/widgets/Services";
-import Vision from "@/widgets/Vision";
+import Navbar from "@/app/shared/widgets/Navbar";
+import News from "@/app/shared/widgets/News";
+import HomeProduct from "@/app/shared/widgets/Product";
+import ScrollDown from "@/app/shared/widgets/ScroolDown";
+import OurServices from "@/app/shared/widgets/Services";
+import Vision from "@/app/shared/widgets/Vision";
 
 const Home = () => {
   return (
@@ -19,6 +20,9 @@ const Home = () => {
       </div>
       <div>
         <Vision />
+      </div>
+      <div>
+        <News />
       </div>
     </main>
   );

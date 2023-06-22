@@ -1,0 +1,24 @@
+.news,
+.article {
+  width: 100%;
+  padding: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newDetail {
+  padding: 10px;
+  height: 450px;
+}
+
+.allItems {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.allItems .newDetail {
+  width: 25%;
+}

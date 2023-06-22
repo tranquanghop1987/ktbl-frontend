@@ -3,9 +3,8 @@ import React, { useState } from "react";
 import { Layout, Button, Drawer } from "antd";
 import LeftMenu from "./LeftMenu";
 import { MenuOutlined } from "@ant-design/icons";
-import Image from "next/image";
 
-const Navbar = () => {
+const Navbar = ({ isHome = true }: { isHome?: boolean }) => {
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
     setVisible(!visible);
@@ -19,15 +18,8 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <Layout style={{ backgroundColor: "transparent" }}>
-        <Layout.Header
-          className="nav-header"
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-          }}
-        >
+      <Layout style={{ backgroundColor: isHome ? "transparent" : "#00A6E6" }}>
+        <Layout.Header className="nav-header">
           <div className="logo">
             <img src="/assets/images/KTBL-logo2.svg" alt="" />
           </div>
@@ -47,7 +39,7 @@ const Navbar = () => {
               open={visible}
               style={{ zIndex: 99999 }}
             >
-              <LeftMenu mode={"inline"} />
+              <LeftMenu mode={"inline"} isModal={true} />
             </Drawer>
           </div>
         </Layout.Header>

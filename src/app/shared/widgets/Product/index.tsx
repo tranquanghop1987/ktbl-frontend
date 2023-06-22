@@ -20,17 +20,18 @@ function HomeProduct() {
     <div className={styles.hproduct} id="product">
       <div className="flex-column align-center">
         <div className={styles.productTitle}>ผลิตภัณฑ์สินเชื่อ</div>
-        <Row className={styles.productList}>
+        <Row className={styles.productList} style={{ margin: "8px" }}>
           {items.map((item) => {
             return (
-              <Col
-                key={item.key}
-                sm={24}
-                onClick={handleActive(item.key)}
-                className={active === item.key ? styles.active : ""}
-              >
-                {item.label}
-              </Col>
+              <div key={item.key}>
+                <Col
+                  sm={24}
+                  onClick={handleActive(item.key)}
+                  className={active === item.key ? styles.active : ""}
+                >
+                  {item.label}
+                </Col>
+              </div>
             );
           })}
           {/* <div>รถบรรทุกและอุปกรณ์ต่อพ่วง</div>
