@@ -1,20 +1,15 @@
 'use client';
 import React, { useState } from 'react';
 import { Layout, Button, Drawer } from 'antd';
-import LeftMenu from './LeftMenu';
+import LeftMenu from './section/LeftMenu';
 import { MenuOutlined } from '@ant-design/icons';
+import {ItemType} from "antd/es/menu/hooks/useItems";
 
-const Navbar = ({ isHome = true }: { isHome?: boolean }) => {
+const Navbar = ({ isHome = true, data }: { isHome?: boolean, data: ItemType[] }) => {
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
     setVisible(!visible);
   };
-
-  // If you do not want to auto-close the mobile drawer when a path is selected
-  // Delete or comment out the code block below
-  // From here
-
-  // Upto here
 
   return (
     <nav className="navbar">
@@ -39,7 +34,7 @@ const Navbar = ({ isHome = true }: { isHome?: boolean }) => {
               open={visible}
               style={{ zIndex: 99999 }}
             >
-              <LeftMenu mode={'inline'} isModal={true} />
+              <LeftMenu mode={'inline'} isModal={true} data={data} />
             </Drawer>
           </div>
         </Layout.Header>

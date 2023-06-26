@@ -1,8 +1,19 @@
-export function getStrapiURL(path = '') {
+/**
+ * get backend_url, support failsafe
+ * @param path
+ * @author hoang.pt
+ */
+export const getStrapiURL = (path = '') => {
   return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'}${path}`;
 }
 
-export function getStrapiMedia(url: string | null) {
+
+/**
+ * prepend url, for SEO
+ * @param url
+ * @author hoang.pt
+ */
+export const getStrapiMedia = (url: string | null) => {
   if (url == null) {
     return null;
   }
@@ -16,11 +27,23 @@ export function getStrapiMedia(url: string | null) {
   return `${getStrapiURL()}${url}`;
 }
 
-export function formatDate(dateString: string) {
+
+/**
+ * format Date for Frontend
+ * @param dateString
+ * @author hoang.pt
+ */
+export const formatDate = (dateString: string) => {
   const date = new Date(dateString);
   const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
   return date.toLocaleDateString('en-US', options);
 }
 
-// ADDS DELAY TO SIMULATE SLOW API REMOVE FOR PRODUCTION
-export const delay = (time: number) => new Promise((resolve) => setTimeout(() => resolve(1), time));
+
+/**
+ * ADDS DELAY TO SIMULATE SLOW API (REMOVE FOR PRODUCTION)
+ * @param time
+ */
+export const delay = (time: number) => {
+  return new Promise((resolve) => setTimeout(() => resolve(1), time));
+}

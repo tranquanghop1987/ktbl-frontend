@@ -1,6 +1,6 @@
 import Footer from '@/app/shared/widgets/Footer';
 import './globals.css';
-import { getGlobal } from '@/app/shared/repo/global';
+import { getGlobal } from '@/app/shared/modules/global';
 
 export const metadata = {
   title: 'Create Next App',

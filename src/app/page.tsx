@@ -1,29 +1,25 @@
 import Navbar from '@/app/shared/widgets/Navbar';
-import News from '@/app/shared/widgets/News';
+import ArticleCardList from '@/app/shared/widgets/ArticleCardList';
+import ArticleCardSlide from '@/app/shared/widgets/ArticleCardSlide';
 import HomeProduct from '@/app/shared/widgets/Product';
 import ScrollDown from '@/app/shared/widgets/ScrollDown';
 import OurServices from '@/app/shared/widgets/Services';
 import Vision from '@/app/shared/widgets/Vision';
+import { items } from '@/app/shared/modules/global';
 
 const Home = () => {
   return (
     <main style={{ position: 'relative' }}>
       <div className="banner">
-        <Navbar />
+        <Navbar isHome={true} data={items} />
         <ScrollDown />
       </div>
-      <div>
-        <HomeProduct />
-      </div>
-      <div>
-        <OurServices />
-      </div>
-      <div>
-        <Vision />
-      </div>
-      <div>
-        <News />
-      </div>
+
+      <HomeProduct />
+      <OurServices />
+      <Vision />
+      <ArticleCardSlide />
+      <ArticleCardList />
     </main>
   );
 };

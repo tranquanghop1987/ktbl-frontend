@@ -1,8 +1,5 @@
-'use client';
-import { Col, Row, Typography, Layout } from 'antd';
 import styles from './styles.module.css';
-
-const { Link } = Typography;
+import Link from 'next/link';
 
 const Footer = ({
   telephone,
@@ -17,117 +14,118 @@ const Footer = ({
 }) => {
   return (
     <>
-      <Row gutter={24} className={styles.footer} style={{ margin: '0' }} align="top">
-        <Col md={4} sm={12} xs={24}>
-          <Typography.Title level={3}>ผลิตภัณฑ์กรุงไทยธุรกิจลีสซิ่ง</Typography.Title>
+      <div className={styles.footer} style={{ margin: '0', height: 'auto' }}>
+        <div>
+          <h3>ผลิตภัณฑ์กรุงไทยธุรกิจลีสซิ่ง</h3>{' '}
           <ul>
             <li>
-              <Link>สินเชื่อรถบรรทุก รถหัวลาก และอุปกรณ์ต่อพ่วง​</Link>
+              <Link href={'#'}>สินเชื่อรถบรรทุก รถหัวลาก และอุปกรณ์ต่อพ่วง​</Link>
             </li>
             <li>
-              <Link>สินเชื่อเครื่องจักรก่อสร้าง (ที่จดทะเบียนกรมการขนส่ง)​</Link>
+              <Link href={'#'}>สินเชื่อเครื่องจักรก่อสร้าง (ที่จดทะเบียนกรมการขนส่ง)​</Link>
             </li>
 
             <li>
-              <Link>สินเชื่อรถกระบะ และรถยนต์นั่ง 4 ล้อ ทุกประเภท​</Link>
+              <Link href={'#'}>สินเชื่อรถกระบะ และรถยนต์นั่ง 4 ล้อ ทุกประเภท​</Link>
             </li>
 
             <li>
-              <Link>สินเชื่อรถยนต์มือสอง KTC พี่เบิ้ม​</Link>
+              <Link href={'#'}>สินเชื่อรถยนต์มือสอง KTC พี่เบิ้ม​</Link>
             </li>
 
             <li>
-              <Link>สินเชื่อรถแลกเงิน KTC พี่เบิ้ม​</Link>
+              <Link href={'#'}>สินเชื่อรถแลกเงิน KTC พี่เบิ้ม​</Link>
             </li>
           </ul>
-        </Col>
-        <Col md={4} sm={12} xs={24}>
-          <Typography.Title level={3}>บริการ</Typography.Title>
+        </div>
+        <div>
+          <h3>บริการ</h3>{' '}
           <ul>
             <li>
-              <Link>บริการด้านการประกันภัย​</Link>
+              <Link href={'#'}>บริการด้านการประกันภัย​</Link>
             </li>
             <li>
-              <Link>บริการด้านอื่น ๆ</Link>
+              <Link href={'#'}>บริการด้านอื่น ๆ</Link>
             </li>
             <li>
-              <Link>โปรโมชั่น​</Link>
+              <Link href={'#'}>โปรโมชั่น​</Link>
             </li>
             <li>
-              <Link>อัตราดอกเบี้ย ค่า</Link>
+              <Link href={'#'}>อัตราดอกเบี้ย ค่า</Link>
             </li>
             <li>
-              <Link>ช่องทางการชำระเงิน​​</Link>
+              <Link href={'#'}>ช่องทางการชำระเงิน​​</Link>
             </li>
           </ul>
-        </Col>
-        <Col md={4} sm={12} xs={24}>
-          <Typography.Title level={3}>ข่าวประชาสัมพันธ์ /บทความ​</Typography.Title>
+        </div>
+
+        <div>
+          <h3>ผลิตภัณฑ์กรุงไทยธุรกิจลีสซิ่ง</h3>{' '}
           <ul>
             <li>
-              <Link>วิสัยทัศน์ / พันธกิจ​ ​ </Link>
+              <Link href={'#'}>ข่าวประชาสัมพันธ์​​ ​</Link>
             </li>
             <li>
-              <Link>ความเป็นมา​ </Link>
+              <Link href={'#'}>รายการทรัพย์สินรอการขาย​</Link>
             </li>
             <li>
-              <Link>โครงสร้างองค์กร​ </Link>
-            </li>
-            <li>
-              <Link>คณะกรรมการบริษัท​ </Link>
-            </li>
-            <li>
-              <Link>ผู้บริหารของบริษัท </Link>
-            </li>
-            <li>
-              <Link>นักลงทุนสัมพันธ์​ ​ </Link>
-            </li>
-            <li>
-              <Link>การกำกับดูแลกิจการ​ </Link>
-            </li>
-            <li>
-              <Link>ร่วมงานกับเรา​​ </Link>
+              <Link href={'#'}>บทความ​</Link>
             </li>
           </ul>
-        </Col>
-        <Col md={4} sm={12} xs={24}>
-          <Typography.Title level={3}>ผลิตภัณฑ์กรุงไทยธุรกิจลีสซิ่ง</Typography.Title>
+        </div>
+        <div>
+          <h3>ข่าวประชาสัมพันธ์ /บทความ​</h3>{' '}
           <ul>
             <li>
-              <Link>ข่าวประชาสัมพันธ์​​ ​</Link>
+              <Link href={'#'}>วิสัยทัศน์ / พันธกิจ​ ​ </Link>
             </li>
             <li>
-              <Link>รายการทรัพย์สินรอการขาย​</Link>
+              <Link href={'#'}>ความเป็นมา​ </Link>
             </li>
             <li>
-              <Link>บทความ​</Link>
+              <Link href={'#'}>โครงสร้างองค์กร​ </Link>
+            </li>
+            <li>
+              <Link href={'#'}>คณะกรรมการบริษัท​ </Link>
+            </li>
+            <li>
+              <Link href={'#'}>ผู้บริหารของบริษัท </Link>
+            </li>
+            <li>
+              <Link href={'#'}>นักลงทุนสัมพันธ์​ ​ </Link>
+            </li>
+            <li>
+              <Link href={'#'}>การกำกับดูแลกิจการ​ </Link>
+            </li>
+            <li>
+              <Link href={'#'}>ร่วมงานกับเรา​​ </Link>
             </li>
           </ul>
-        </Col>
-        <Col md={4} sm={12} xs={24}>
+        </div>
+        <div className={styles.logoFooter}>
           <Link href="/">
             <img src="/assets/images/logo-footer.svg" alt="" />{' '}
           </Link>
-          <Typography.Title level={3}>ติดต่อเรา </Typography.Title>
+          <h3>ติดต่อเรา </h3>{' '}
           <ul>
             <li>
               <img src="/assets/icons/phone.svg" alt=""></img>
-              <Link className={styles.phone}> {telephone} </Link>
+              <Link href={'#'} className={styles.phone}>
+                {telephone}
+              </Link>
             </li>
             <li>
               <img src="/assets/icons/facebook.svg" alt=""></img>
-              <Link>{facebook_page}</Link>
+              <Link href={'#'}>{facebook_page}</Link>
             </li>
             <li>
               <img src="/assets/icons/location.svg" alt=""></img>
-              <Link>{address}</Link>
+              <Link href={'#'}>{address}</Link>
             </li>
           </ul>
-        </Col>
-      </Row>
-      <Layout.Footer style={{ textAlign: 'center' }} className={styles.company}>
-        © 2566 บริษัท กรุงไทยธุรกิจลีสซิ่ง จำกัด (มหาชน)
-      </Layout.Footer>
+        </div>
+      </div>
+      <div className={styles.company}>© 2566 บริษัท กรุงไทยธุรกิจลีสซิ่ง จำกัด (มหาชน)</div>
     </>
   );
 };

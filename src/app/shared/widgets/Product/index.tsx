@@ -23,24 +23,28 @@ const HomeProduct = () => {
       description: 'รถกระบะ รถตู้ และรถยนต์นั่ง 4 ล้อทุกประเภท',
       idProduct: '123',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
+      backgroudLink: '/assets/images/product-bg.jpg',
     },
     {
       title: '2',
       description: 'รถกระบะ รถตู้ และรถยนต์นั่ง 4 ล้อทุกประเภท',
       idProduct: '123',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
+      backgroudLink: '/assets/images/banner-bg.png',
     },
     {
       title: '3',
       description: 'รถกระบะ รถตู้ และรถยนต์นั่ง 4 ล้อทุกประเภท',
       idProduct: '123',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
+      backgroudLink: '/assets/images/product-bg.jpg',
     },
     {
       title: ' 4 ',
       description: 'รถกระบะ รถตู้ และรถยนต์นั่ง 4 ล้อทุกประเภท',
       idProduct: '123',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
+      backgroudLink: '/assets/images/banner-bg.png',
     },
   ];
   const handleActive = (key: string, pageNum: number) => () => {
@@ -52,7 +56,11 @@ const HomeProduct = () => {
   };
   return (
     <>
-      <div className={styles.hproduct} id="product">
+      <div
+        className={styles.hproduct}
+        style={{ backgroundImage: `url('${productDetail[page].backgroudLink}')`, transition: 'ease 0.2' }}
+        id="product"
+      >
         <div className="flex-column align-center">
           <div className={styles.productTitle}>ผลิตภัณฑ์สินเชื่อ</div>
           <Row className={styles.productList} style={{ margin: '8px' }}>

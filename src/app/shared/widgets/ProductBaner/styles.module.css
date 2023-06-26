@@ -1,5 +1,5 @@
 .bnProduct {
-  background-image: url("/assets/images/supper.graphic-ktbl01+04.jpg");
+  background-image: url('/assets/images/supper.graphic-ktbl01+04.jpg');
   background-repeat: no-repeat;
   height: 878px;
   background-size: cover;
@@ -20,8 +20,10 @@
   font-weight: 700;
   font-size: 50px;
   margin-bottom: 0;
-  text-shadow: 1px 1px 1px rgba(43, 73, 107, 0.12),
-    2px 4px 8px rgba(0, 128, 189, 0.2);
+  text-shadow: 1px 1px 1px rgba(43, 73, 107, 0.12), 2px 4px 8px rgba(0, 128, 189, 0.2);
+}
+.bnProduct h3 {
+  color: #00a6e6;
 }
 .bnProduct ul .itemTitle {
   color: #262626;
@@ -76,7 +78,7 @@
 }
 
 .productInfo {
-  background: url("/assets/images/product-bg-2.png");
+  background: url('/assets/images/product-bg-2.png');
   height: 678px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -97,21 +99,35 @@
 .contentProduct {
   color: #fff;
 }
-
+.btnMobile {
+  display: none;
+}
+.titleMobile {
+  display: none;
+}
 @media screen and (max-width: 600px) {
   .bnProduct {
     padding-left: 10px;
     text-align: center;
     clip-path: none;
+    height: auto;
+  }
+  .btnWeb {
+    display: none;
+  }
+  .btnMobile {
+    display: block;
   }
   .description {
     width: 100%;
   }
   .item {
-    display: none;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
   .button {
-    margin-top: 356px;
+    margin-top: 50px;
     width: 90%;
   }
 
@@ -124,5 +140,17 @@
   .content {
     width: 390px;
     padding: 10px;
+  }
+  .blockItem {
+    background-color: white;
+    margin-left: -10px;
+    margin-top: 10px;
+    padding: 30px 10px;
+  }
+  .titleMobile {
+    display: block;
+  }
+  .block {
+    height: 75vh;
   }
 }

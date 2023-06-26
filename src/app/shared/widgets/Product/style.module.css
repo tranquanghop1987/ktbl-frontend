@@ -1,11 +1,5 @@
 .hproduct {
-  background: url("/assets/images/product-bg.jpg"),
-    linear-gradient(
-      180deg,
-      #c3e7f3 0%,
-      rgba(255, 255, 255, 0.69) 24.47%,
-      rgba(255, 255, 255, 0) 43.46%
-    );
+  /* background: linear-gradient(180deg, #c3e7f3 0%, rgba(255, 255, 255, 0.69) 24.47%, rgba(255, 255, 255, 0) 43.46%); */
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
