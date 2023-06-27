@@ -1,6 +1,5 @@
 import { fetchAPI } from '@/app/shared/utils/fetch-api';
-import {ItemType} from "antd/es/menu/hooks/useItems";
-
+import { ItemType } from 'antd/es/menu/hooks/useItems';
 
 /**
  * get all remote variable from server
@@ -20,7 +19,6 @@ export const getGlobal = async (): Promise<any> => {
   const response = await fetchAPI(path, urlParamsObject, options);
   return response;
 };
-
 
 // TODO: hardcode, should get from api
 export const items: ItemType[] = [

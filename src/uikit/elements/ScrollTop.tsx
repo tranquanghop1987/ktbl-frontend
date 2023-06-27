@@ -8,8 +8,8 @@ function ScrollTop() {
   useEffect(() => {
     const mainHeader = document.getElementById('main-header');
     if (mainHeader) {
-      var windowpos = document.documentElement.scrollTop;
-      var scrollLink = refScroll.current;
+      const windowpos = document.documentElement.scrollTop;
+      const scrollLink = refScroll.current;
       if (windowpos >= 110) {
         mainHeader.classList.add('fixed-header');
         scrollLink?.classList.add('open');

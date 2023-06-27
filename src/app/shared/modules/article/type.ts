@@ -8,5 +8,5 @@ export interface IArticleMinInfo {
   featureImage: {
     url: string;
     altText: string;
-  }
+  };
 }

@@ -2,7 +2,7 @@
 import { Breadcrumb, Col, Row, Typography } from 'antd';
 import styles from './styles.module.css';
 import Button from '../Button';
-const { Title, Link } = Typography;
+const { Link } = Typography;
 function ProductBaner() {
   const detailList = [
     {
@@ -102,7 +102,7 @@ function ProductBaner() {
               สำหรับการลงทุนในทรัพย์สินเพื่อการใช้งานในกิจการ โดยผู้เช่า (Lessee) เป็นผู้เลือกทรัพย์สินที่
               ต้องการจากผู้ผลิต หรือผู้ขาย ผู้ให้เช่า (Lesser) เป็นผู้ชำระค่าทรัพย์สินนั้นให้แก่ผู้ผลิต หรือผู้ขาย
               ผู้เช่าผ่อนชำระเงินค่าทรัพย์ สินให้แก่ ผู้ให้เช่าตามสัญญา (กรรมสิทธิ์ทรัพย์สินเป็นของผู้ให้เช่า)
-              การให้บริการนี้ถือเป็นสินเชื่อ ระยะปานกลาง หรือระยะยาว 3-5 ปี​
+              การให้บริการนี้ถือเป็นสินเชื่อ ระยะปานกลาง หรือระยะยาว 3-5 ปี
             </div>
           </Col>
         </Row>

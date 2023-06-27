@@ -1,9 +1,9 @@
-import { Button as BtnAntd ,ButtonProps} from "antd";
-import styles from "./style.module.css";
+import { Button as BtnAntd } from 'antd';
+import styles from './style.module.css';
 
 function Button({
-  text = "",
-  type = "primary",
+  text = '',
+  type = 'primary',
   className,
   width,
   ...rest
@@ -12,7 +12,7 @@ function Button({
   type?: any;
   className?: string;
   width?: number;
-  [x:string]: any;
+  [x: string]: any;
 }) {
   return (
     <BtnAntd

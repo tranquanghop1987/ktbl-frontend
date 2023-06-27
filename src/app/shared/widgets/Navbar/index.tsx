@@ -1,44 +1,46 @@
 'use client';
-import React, { useState } from 'react';
-import { Layout, Button, Drawer } from 'antd';
-import LeftMenu from './section/LeftMenu';
-import { MenuOutlined } from '@ant-design/icons';
-import {ItemType} from "antd/es/menu/hooks/useItems";
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import './styles.css';
+import { items } from '@/app/shared/modules/global';
+import { renderMenu } from './section/LeftMenu';
 
-const Navbar = ({ isHome = true, data }: { isHome?: boolean, data: ItemType[] }) => {
-  const [visible, setVisible] = useState(false);
-  const showDrawer = () => {
-    setVisible(!visible);
+const Navbar = ({ isHome = true }: { isHome?: boolean }) => {
+  const [navBgColor, setNavBgColor] = useState('transparent');
+
+  const listenScrollEvent = () => {
+    window.scrollY > 50 ? setNavBgColor('main-bg') : setNavBgColor('');
   };
+  useEffect(() => {
+    window.addEventListener('scroll', listenScrollEvent);
+    return () => {
+      window.removeEventListener('scroll', listenScrollEvent);
+    };
+  }, []);
+  // If you do not want to auto-close the mobile drawer when a path is selected
+  // Delete or comment out the code block below
+  // From here
 
+  // Upto here
+  const onClick = (className: string) => () => {
+    document.body.classList.toggle(className);
+  };
   return (
-    <nav className="navbar">
-      <Layout style={{ backgroundColor: isHome ? 'transparent' : '#00A6E6' }}>
-        <Layout.Header className="nav-header">
-          <div className="logo">
-            <img src="/assets/images/KTBL-logo2.svg" alt="" />
-          </div>
-          <div className="navbar-menu">
-            <div className="leftMenu">
-              <LeftMenu mode={'horizontal'} />
-            </div>
-            <Button className="menuButton" type="text" onClick={showDrawer}>
-              <MenuOutlined />
-            </Button>
+    <nav className={`navbar ${navBgColor} ${!isHome ? 'main-bg' : ''}`}>
+      <div className="logo">
+        <Link href={'/'}>
+          <img src="/assets/images/KTBL-logo2.svg" alt="" />
+        </Link>
+      </div>
+      <div className="push-left">
+        <button id="menu-toggler" onClick={onClick('menu-active')} data-classname="menu-active" className="hamburger">
+          <span className="hamburger-line hamburger-line-top"></span>
+          <span className="hamburger-line hamburger-line-middle"></span>
+          <span className="hamburger-line hamburger-line-bottom"></span>
+        </button>
 
-            <Drawer
-              title={'Brand Here'}
-              placement="right"
-              closable={true}
-              onClose={showDrawer}
-              open={visible}
-              style={{ zIndex: 99999 }}
-            >
-              <LeftMenu mode={'inline'} isModal={true} data={data} />
-            </Drawer>
-          </div>
-        </Layout.Header>
-      </Layout>
+        {renderMenu({ menus: items })}
+      </div>
     </nav>
   );
 };

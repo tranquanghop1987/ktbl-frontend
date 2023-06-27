@@ -1,23 +1,33 @@
-'use client';
-import React from 'react';
-import {Menu} from 'antd';
-import {ItemType} from "antd/es/menu/hooks/useItems";
-import { items } from '@/app/shared/modules/global';
+import Link from 'next/link';
 
-const LeftMenu = ({ mode, isModal, data }: { mode: any; isModal?: boolean; data: ItemType[] }) => {
-
-  const menuItems = (data === undefined) ? items : items;
-
+export const renderMenu = ({
+  menus = [],
+  isFirst = true,
+  className,
+}: {
+  menus: Array<any>;
+  isFirst?: boolean;
+  className?: string;
+}): any => {
   return (
-    <Menu
-      mode={mode}
-      items={menuItems}
-      style={{
-        backgroundColor: 'transparent',
-        color: isModal ? '#262626' : '#ffffff',
-      }}
-    ></Menu>
+    <ul className={`${isFirst ? 'menu nav-menu' : 'sub-nav'} ${className}`}>
+      {menus?.map((item, index) => {
+        return (
+          <li key={index} className={isFirst ? 'menu-item  dropdown' : ' menu-item'}>
+            <Link href={''} className={isFirst ? 'nav__link' : 'sub-nav__link'}>
+              {item?.label} {item?.children ? renderMenu({ menus: item.children, isFirst: false }) : null}
+            </Link>
+            {isFirst ? <div className="icon_image" /> : null}
+          </li>
+        );
+      })}
+    </ul>
   );
 };
+// const LeftMenu = ({ mode, isModal, data }: { mode: any; isModal?: boolean; data: ItemType[] }) => {
+//   const menuItems = data === undefined ? items : items;
 
-export default LeftMenu;
+//   return <>{renderMenu(menuItems)}</>;
+// };
+
+// export default LeftMenu;

@@ -6,7 +6,7 @@ import { TextField } from '@mui/material';
 import Select from '../Select';
 import './style.css';
 import Button from '../Button';
-const ProductForm = (props: any) => {
+const ProductForm = () => {
   return (
     <div className="product-form">
       <Typography.Title level={3}>สมัครผลิตภัณฑ์</Typography.Title>

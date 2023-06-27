@@ -1,13 +1,15 @@
 .footer {
-  padding-top: 40px;
+  padding: 40px 80px;
   background-image: url('/assets/images/foodter-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  display: grid;
+  display: flex;
+  justify-content: space-between;
+  /* display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(auto-fit, 240px);
   grid-gap: 22px;
-  justify-content: center;
+  justify-content: center; */
 }
 .footer h3 {
   color: #0b7199;
@@ -60,5 +62,12 @@
     flex-direction: column;
     align-items: flex-start;
     padding-left: 20px;
+  }
+
+  .footer .footerPanel {
+    display: none;
+  }
+  .footer h3:hover + .footerPanel {
+    display: flex;
   }
 }

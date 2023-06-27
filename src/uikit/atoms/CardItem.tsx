@@ -1,27 +1,21 @@
-'use client';
 import React from 'react';
-import { Card, Tag } from 'antd';
 import styles from './styles.module.css';
-
-const { Meta } = Card;
 
 const CardItem = ({
   imageUrl,
   tag,
   createDate,
   description,
-  ...rest
 }: {
-  imageUrl: string;
+  imageUrl: string | null;
   tag: string;
   createDate: string;
   description: string;
+  [x: string]: any;
 }) => {
   return (
     <div className={`${styles.cardItem} gap-8 flex-column`}>
-      <div className={styles.cardImage}>
-        <img src={imageUrl} alt="" />
-      </div>
+      <div className={styles.cardImage}>{imageUrl && <img src={imageUrl} alt="" />}</div>
 
       <div className={`${styles.content} flex-column gap-8 `}>
         <div className={`flex flex-sb `}>
