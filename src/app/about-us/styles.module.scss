@@ -1,0 +1,16 @@
+.bannerWrapper {
+
+    color: #FFFFFF;
+    position: relative;
+
+    @media (min-width: 1200px) {
+        & {
+            min-height: 450px !important;
+            padding: 96px;
+        }
+    }
+
+    img {
+        z-index: -1;
+    }
+}

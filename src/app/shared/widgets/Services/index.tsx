@@ -1,6 +1,8 @@
 'use client';
-import styles from './style.module.css';
-import { Row, Col } from 'antd';
+import styles from './style.module.scss';
+import {useInView} from 'react-intersection-observer';
+import Image from "next/image";
+
 
 const itemList = [
   {
@@ -22,19 +24,27 @@ const itemList = [
 ];
 
 function OurServices() {
+  const {ref, inView} = useInView({
+    triggerOnce: false,
+    rootMargin: '-300px 0px',
+  });
+
   return (
-    <div className={styles.ourServices}>
-      <div className={styles.title}>บริการของเรา</div>
-      <Row className={styles.itemList}>
-        {itemList.map((item, index) => {
-          return (
-            <Col key={index} sm={24} md={5} className={styles.items}>
-              <div className={styles.itemLabel}>{item.label}</div>
-              <img src={item.imageUrl} alt="" className={styles.itemImage} />
-            </Col>
-          );
-        })}
-      </Row>
+    <div className={styles.ourServices + ` w-full ${inView ? ` ${styles.animation}` : ` ${styles.animationOut}`}`} ref={ref}>
+      <div className={`container  container mx-auto`}>
+        <div className={styles.title}>บริการของเรา</div>
+        <div className={styles.itemList + ` grid grid-cols-4`}>
+          {itemList.map((item, index) => {
+            return (
+              <div key={index} className={styles.items}>
+                <Image fill objectFit={'cover'} src={item.imageUrl} alt=""/>
+                <div className={styles.overlay}></div>
+                <div className={styles.itemLabel}>{item.label}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import Footer from '@/app/shared/widgets/Footer';
-import './globals.css';
+import './globals.scss';
 import { getGlobal } from '@/app/shared/modules/global';
 
 export const metadata = {
