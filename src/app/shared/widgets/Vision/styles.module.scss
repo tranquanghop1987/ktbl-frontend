@@ -140,7 +140,16 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  .vision {
+    background: url('/assets/images/vision_mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .visionBackgroundLeft,
+  .visionBackgroundRight {
+    display: none;
+  }
   .text {
     margin-left: 20px;
     padding: 40px 0;
@@ -149,6 +158,6 @@
   }
 
   .content {
-    width: 100%;
+    width: 98%;
   }
 }

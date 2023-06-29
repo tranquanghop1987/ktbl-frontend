@@ -1,4 +1,5 @@
 .hproduct {
+  background-image: url('/assets/images/product-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -19,7 +20,6 @@
   top: 48%;
   width: 50%;
 }
-
 .carRight {
   position: absolute;
   right: -28%;
@@ -27,7 +27,19 @@
   top: 40%;
   transform: translate(0, -27%);
 }
-
+@media screen and (max-width: 768px) {
+  .hproduct {
+    background-image: url('/assets/images/Product_section_mobile.png');
+  }
+  .productList {
+    flex-direction: column !important;
+    // flex-wrap: wrap;
+  }
+  .carLeft,
+  .carRight {
+    display: none;
+  }
+}
 @keyframes carLeftIn {
   0% {
     left: -20%;

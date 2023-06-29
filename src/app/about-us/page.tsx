@@ -31,18 +31,18 @@ const services: ServiceItem[] = [
     title: 'โปรโมชั่น',
     image: `/assets/images/about-us/discount-tag.png`,
     content: `เราให้บริการโปรโมชั่นพิเศษเพื่อสร้างมูลค่าให้กับลูกค้า เช่น ส่วนลดราคา ของแถม หรือแพ็คเกจบริการพิเศษ เราอัปเดตและนำเสนอโปรโมชั่นที่น่าสนใจเพื่อให้ลูกค้าสามารถใช้ประโยชน์สูงสุดจากการใช้บริการของเรา`,
-  }
-]
+  },
+];
 
 const serviceItem = (item: ServiceItem) => {
   return (
     <div className={styles.serviceItem}>
-      <Image width={75} height={75} src={item.image} alt={'img'}/>
+      <Image width={75} height={75} src={item.image} alt={'img'} />
       <h1 className="text-2xl">{item.title} </h1>
       <p>{item.content}</p>
     </div>
-  )
-}
+  );
+};
 
 const AboutUs = () => {
   return (
@@ -52,33 +52,27 @@ const AboutUs = () => {
         <header className={'flex-column justify-center flex-1 flex-grow-1'}>
           <h1 className={'text-6xl mb-5'}>เกี่ยวกับบริษัท</h1>
           <p className={'text-xl'}>
-            GROWING TOGETHER ก้าวไกล ไปกับคุณ <br/>
-            มุ่งมั่นพัฒนาศักยภาพของบุคลากรและสร้างการบริการที่มีคุณค่า สร้างคุณภาพที่ดีขึ้น แก่. <br/>
+            GROWING TOGETHER ก้าวไกล ไปกับคุณ <br />
+            มุ่งมั่นพัฒนาศักยภาพของบุคลากรและสร้างการบริการที่มีคุณค่า สร้างคุณภาพที่ดีขึ้น แก่. <br />
             สังคม และสร้างผลตอบแทนที่ดีอย่างยั่งยืนแก่ผู้ถือหุ้น
           </p>
         </header>
-        <Image fill alt={'banner'} src={'/assets/images/about-us-banner.jpg'}/>
+        <Image fill alt={'banner'} src={'/assets/images/about-us-banner.jpg'} />
       </section>
       <section className={styles.serviceSection}>
         <div className={`grid gap-20 grid-cols-1 sm:grid-cols-2 md:grid-cols-4`}>
-          {
-            services.map(e => serviceItem(e))
-          }
+          {services.map((e) => serviceItem(e))}
         </div>
       </section>
       <section className={`${styles.historySection}`}>
         <div className={' grid grid-cols-1 ms:grid-cols-2 md:grid-cols-2 xl:grid-cols-2'}>
           <div className={styles.imageContainer}>
-            <Image
-              width={400}
-              height={400}
-              alt={'banner'}
-              src={'/assets/images/about-pic-1.jpg'}
-            />
+            <Image width={400} height={400} alt={'banner'} src={'/assets/images/about-pic-1.jpg'} />
           </div>
           <div className={'pr-10 p-10 flex-column justify-center'}>
-            <h1 className={'text-3xl font-extrabold underline mb-3 color-primary'}>บริษัท กรุงไทยธุรกิจลีสซิ่ง
-              จำกัด</h1>
+            <h1 className={'text-3xl font-extrabold underline mb-3 color-primary'}>
+              บริษัท กรุงไทยธุรกิจลีสซิ่ง จำกัด
+            </h1>
             <p className={'text-justify'}>
               บริษัท กรุงไทยธุรกิจลีสซิ่ง จำกัด ก่อตั้งเมื่อเดือนตุลาคม 2548 เมื่อวันที่ 3 พฤศจิกายน 2557 มีทุนจดทะเบียน
               1,000 ล้านบาท เมื่อวันที่ 21 พฤษภาคม 2564 โครงสร้างผู้ถือหุ้นของบริษัท โดย บมจ.บัตรกรุงไทย ถือหุ้นสัดส่วน
@@ -112,44 +106,27 @@ const AboutUs = () => {
             <h1 className={'text-4xl font-bold text-center underline mb-3 color-primary'}>ค่านิยมหลัก</h1>
             <div className={`grid grid-cols-1 ms:grid-cols-2 md:grid-cols-4 xl:grid-cols-4 pt-10`}>
               <div className={`text-center flex-column justify-center align-center`}>
-                <Image
-                  width={50}
-                  height={50}
-                  alt={'banner'}
-                  src={'/assets/images/about-us/integration.png'}
-                />
+                <Image width={50} height={50} alt={'banner'} src={'/assets/images/about-us/integration.png'} />
                 <div>
                   <span className={`text-3xl`}>I</span> : <span className={`text-2xl`}>Integrity (ซื่อสัตย์)</span>
                 </div>
               </div>
               <div className={`text-center flex-column justify-center align-center`}>
-                <Image
-                  width={50}
-                  height={50}
-                  alt={'banner'}
-                  src={'/assets/images/about-us/creative-brain.png'}
-                />
-                <div><span className={`text-3xl`}>C</span> : <span className={`text-2xl`}>Creativity (สร้างสรรค์)</span>
+                <Image width={50} height={50} alt={'banner'} src={'/assets/images/about-us/creative-brain.png'} />
+                <div>
+                  <span className={`text-3xl`}>C</span> : <span className={`text-2xl`}>Creativity (สร้างสรรค์)</span>
                 </div>
               </div>
               <div className={`text-center flex-column justify-center align-center`}>
-                <Image
-                  width={50}
-                  height={50}
-                  alt={'banner'}
-                  src={'/assets/images/about-us/efficacy.png'}
-                />
-                <div><span className={`text-3xl`}>E</span> : <span className={`text-2xl`}>Efficiency (สำเร็จ)</span>
+                <Image width={50} height={50} alt={'banner'} src={'/assets/images/about-us/efficacy.png'} />
+                <div>
+                  <span className={`text-3xl`}>E</span> : <span className={`text-2xl`}>Efficiency (สำเร็จ)</span>
                 </div>
               </div>
               <div className={`text-center flex-column justify-center align-center`}>
-                <Image
-                  width={50}
-                  height={50}
-                  alt={'banner'}
-                  src={'/assets/images/about-us/partners.png'}
-                />
-                <div><span className={`text-3xl`}>C</span> : <span className={`text-2xl`}>Collaboration (ร่วมมือ)</span>
+                <Image width={50} height={50} alt={'banner'} src={'/assets/images/about-us/partners.png'} />
+                <div>
+                  <span className={`text-3xl`}>C</span> : <span className={`text-2xl`}>Collaboration (ร่วมมือ)</span>
                 </div>
               </div>
             </div>

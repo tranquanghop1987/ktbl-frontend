@@ -24,6 +24,7 @@
 
 :root {
   --ktb-solid-krungthai-blue: #00a6e6;
+  --padding-mobile-page: 16px;
 }
 
 body {
@@ -241,7 +242,7 @@ ul li {
   gap: 8px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .banner {
     background-image: url('/assets/images/banner-mobile.png');
   }

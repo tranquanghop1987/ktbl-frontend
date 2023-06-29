@@ -2,7 +2,6 @@
 import styles from './style.module.scss';
 import PrimaryButton from '../Button';
 import { useState } from 'react';
-import { Col, Row } from 'antd';
 import { useRouter } from 'next/navigation';
 import { useInView } from 'react-intersection-observer';
 
@@ -15,35 +14,36 @@ const HomeProduct = () => {
     { label: 'รถบรรทุกและอุปกรณ์ต่อพ่วง', key: 'p1' },
     { label: 'เครื่องจักรก่อสร้าง (จดทะเบียน)', key: 'p2' },
     { label: 'รถยนต์นั่ง 4 ล้อ', key: 'p3' },
-    { label: 'รถยนต์นั่ง 4 ล้อ', key: 'p4' },
+    { label: 'รถยนต์มือสอง', key: 'p4' },
   ];
 
   const productDetail = [
     {
-      title: 'ผลิตภัณฑ์รถยนต์นั่ง 4 ล้อ',
-      description: 'รถกระบะ รถตู้ และรถยนต์นั่ง 4 ล้อทุกประเภท',
-      idProduct: '123',
-      titleBtn: 'รายละเอียดผลิตภัณฑ์',
-      backgroudLink: '/assets/images/product-bg.png',
-    },
-    {
-      title: '2',
-      description: 'รถกระบะ รถตู้ และรถยนต์นั่ง 4 ล้อทุกประเภท',
-      idProduct: '123',
+      title: 'สินเชื่อเช่าซื้อรถบรรทุกและอุปกรณ์ต่อพ่วง',
+      description: 'รถบรรทุกใหม่ รถบรรทุกใช้แล้ว  Sales and Hire Purchase Back / Refinance',
+      idProduct: '1',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
       backgroudLink: '/assets/images/banner-bg.png',
     },
     {
-      title: '3',
-      description: 'รถกระบะ รถตู้ และรถยนต์นั่ง 4 ล้อทุกประเภท',
-      idProduct: '123',
+      title: 'สินเชื่อเช่าซื้อเครื่องจักร',
+      description: 'รเครื่องจักรใหม เครื่องจักรใช้แล้ว  Sales and Hire Purchase Back / Refinance',
+      idProduct: '2',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
       backgroudLink: '/assets/images/product-bg.png',
     },
     {
-      title: ' 4 ',
-      description: 'รถกระบะ รถตู้ และรถยนต์นั่ง 4 ล้อทุกประเภท',
-      idProduct: '123',
+      title: ' สินเชื่อเช่าซื้อรถกระบะ และรถยนต์นั่ง 4 ล้อ ทุกประเภท',
+      description:
+        'รถกระบะ และรถยนต์นั่ง 4 ล้อ ใหม่ รถกระบะ และรถยนต์นั่ง 4 ล้อ ใช้แล้ว สินเชื่อ Sales and Hire Purchase Back / Refinance',
+      idProduct: '3',
+      titleBtn: 'รายละเอียดผลิตภัณฑ์',
+      backgroudLink: '/assets/images/product-bg.png',
+    },
+    {
+      title: 'สินเชื่อ KTC พี่เบิ้ม รถยนต์มือสอง',
+      description: 'อนุมัติไว รับรถทันใจ ไม่ต้องมีผู้ค้ำ',
+      idProduct: '4',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
       backgroudLink: '/assets/images/banner-bg.png',
     },
@@ -58,7 +58,7 @@ const HomeProduct = () => {
 
   const { ref, inView } = useInView({
     triggerOnce: false,
-    rootMargin: '-400px 0px',
+    rootMargin: '-300px 0px',
   });
 
   return (
@@ -66,7 +66,7 @@ const HomeProduct = () => {
       <div
         className={styles.hproduct + ` w-full ${inView ? ` ${styles.animation}` : ` ${styles.animationOut}`}`}
         ref={ref}
-        style={{ backgroundImage: `url('${productDetail[page].backgroudLink}')`, transition: 'ease 0.2' }}
+        // style={{ backgroundImage: `url('${productDetail[page].backgroudLink}')`, transition: 'ease 0.2' }}
         id="product"
       >
         <div className={styles.carLeft}>
@@ -77,23 +77,19 @@ const HomeProduct = () => {
         </div>
         <div className={styles.productInfoTitle + ` flex-column align-center`}>
           <div className={styles.productTitle}>ผลิตภัณฑ์สินเชื่อ</div>
-          <Row className={styles.productList} style={{ margin: '8px' }}>
+          <div className={styles.productList} style={{ margin: '8px' }}>
             {items.map((item, index) => {
               return (
                 <div key={item.key}>
-                  <Col
-                    sm={24}
-                    onClick={handleActive(item.key, index)}
-                    className={active === item.key ? styles.active : ''}
-                  >
+                  <div onClick={handleActive(item.key, index)} className={active === item.key ? styles.active : ''}>
                     {item.label}
-                  </Col>
+                  </div>
                 </div>
               );
             })}
-          </Row>
+          </div>
         </div>
-        <div className={styles.content}>
+        <div className={`${styles.content} text-center`}>
           <div className={styles.contentTitle}>{productDetail[page].title}</div>
           <div className={styles.contentDescription + ' .mt-8'}>{productDetail[page].description}</div>
           <div className="flex justify-content-center mt-64">

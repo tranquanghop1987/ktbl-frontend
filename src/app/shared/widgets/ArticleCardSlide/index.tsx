@@ -1,6 +1,5 @@
 'use client';
 import CardItem from '@/uikit/atoms/CardItem';
-import { Button } from 'antd';
 import styles from './styles.module.css';
 import '../../../assets/css/slick.css';
 import '../../../assets/css/slick-theme.css';
@@ -9,6 +8,7 @@ import { itemList } from '@/app/shared/modules/article/mock';
 import { useCallback, useEffect, useState } from 'react';
 import { getArticles } from '@/app/shared/modules/article/repo';
 import Loader from '@/uikit/atoms/Loader';
+import PrimaryButton from '../Button';
 
 // const showItem = Math.round(globalThis?.window?.screen.width / 305) - 1;
 const showItem = 4;
@@ -71,7 +71,7 @@ const ArticleCardList = () => {
     <div className={styles.article}>
       <div className={styles.header}>
         <div className={styles.title}>บทความ</div>
-        <Button style={{ color: '#0080BD', border: 'none' }}>กด</Button>
+        <PrimaryButton style={{ color: '#0080BD', border: 'none' }} text="กด" />
       </div>
       <Slider {...settings}>
         {data &&

@@ -1,5 +1,5 @@
 'use client';
-import { Breadcrumb, Col, Row } from 'antd';
+import { Breadcrumb } from 'antd';
 import styles from './styles.module.css';
 import PrimaryButton from '../Button';
 import Link from 'next/link';
@@ -35,7 +35,7 @@ function ProductBaner() {
   return (
     <div>
       <div className={styles.bnProduct}>
-        <div className={styles.block}>
+        <div className={`${styles.block} relative`}>
           <div>
             <Breadcrumb
               className={styles.breadcrumb}
@@ -57,10 +57,15 @@ function ProductBaner() {
             ผลิตภัณฑ์สินเชื่อเช่ารถกระบะ หรือรถยนต์นั่ง 4 ล้อทุกประเภทแบบลีสซิ่งเพื่อธุรกิจมีให้เลือกทั้ง
             รถใหม่และรถใช้แล้ว
           </div>
+          <div className={styles.btnMobile}>
+            <PrimaryButton text="สมัครผลิตภัณฑ์" className={styles.button} />
+          </div>
         </div>
-        <div className={styles.btnMobile}>
+
+        <div className={styles.btnWeb}>
           <PrimaryButton text="สมัครผลิตภัณฑ์" className={styles.button} />
         </div>
+
         <div className={styles.blockItem}>
           <div className={styles.titleMobile}>
             <h3>รถยนต์นั่ง 4 ล้อทุกประเภท</h3>
@@ -93,16 +98,14 @@ function ProductBaner() {
             </div>
           </div>
         </div>
-        <div className={styles.btnWeb}>
-          <PrimaryButton text="สมัครผลิตภัณฑ์" className={styles.button} />
-        </div>
       </div>
-      <div>
-        <Row>
-          <Col sm={24} md={12} className={styles.imageLeft}>
+
+      <div className="flex justify-center ">
+        <div className="container grid md:grid-cols-2 xs:grid-cols-1">
+          <div className={styles.imageLeft}>
             <img src="/assets/images/illus.png" alt="" />
-          </Col>
-          <Col sm={24} md={12} className={styles.contentRight}>
+          </div>
+          <div className={styles.contentRight}>
             <div className={styles.content}>
               <h2 className={styles.title}>การให้บริการเช่าแบบลีสซิ่ง</h2>
               เป็นการได้มาซึ่งสังหาริมทรัพย์ที่เป็นทรัพย์สินประเภททุนเป็นสินทรัพย์ในรูปแบบการเช่า
@@ -111,12 +114,12 @@ function ProductBaner() {
               ผู้เช่าผ่อนชำระเงินค่าทรัพย์ สินให้แก่ ผู้ให้เช่าตามสัญญา (กรรมสิทธิ์ทรัพย์สินเป็นของผู้ให้เช่า)
               การให้บริการนี้ถือเป็นสินเชื่อ ระยะปานกลาง หรือระยะยาว 3-5 ปี
             </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
       </div>
       <div className={`${styles.productInfo}   ${inView ? styles.inView : styles.inOut}`} ref={ref}>
         <div className={styles.carMobile}>
-          <img src="/assets/images/mobie_product.png" alt="" />
+          <img src="/assets/images/mobie_product.png" style={{ width: '100%', height: '25vh' }} alt="" />
         </div>
 
         <div className={`${styles.viewCar} container`}>

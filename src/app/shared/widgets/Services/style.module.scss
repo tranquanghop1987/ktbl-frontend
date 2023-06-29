@@ -12,31 +12,53 @@
     justify-content: center;
   }
 
-  @media only screen and (max-width: 650px){
+  @media only screen and (max-width: 768px) {
     padding-left: 8px;
     padding-right: 8px;
   }
 }
 @keyframes titleAnimOut {
-  0% {top: 0px; opacity: 1}
-  100% { top:200px; opacity: 0}
+  0% {
+    top: 0px;
+    opacity: 1;
+  }
+  100% {
+    top: 200px;
+    opacity: 0;
+  }
 }
 @keyframes titleAnim {
-  0% {top: 200px; opacity: 0}
-  100% { top:0px; opacity: 1}
+  0% {
+    top: 200px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
 }
 
 @keyframes itemAnim {
-  0% {top: 200px; opacity: 0}
-  100% { top:0px; opacity: 1}
-
+  0% {
+    top: 200px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
 }
 @keyframes itemAnimOut {
-  0% {top: 0px; opacity: 1}
-  100% { top:50px; opacity: 0}
+  0% {
+    top: 0px;
+    opacity: 1;
+  }
+  100% {
+    top: 50px;
+    opacity: 0;
+  }
 }
 .itemList {
-
   //display: flex;
   gap: 21px;
   //justify-content: center;
@@ -73,7 +95,6 @@
     .items {
       animation: itemAnimOut 0.5s ease-out forwards;
       position: relative;
-
     }
   }
 }

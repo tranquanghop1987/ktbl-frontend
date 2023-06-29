@@ -1,7 +1,7 @@
 'use client';
 import { CloseOutlined, PlusOutlined } from '@ant-design/icons';
 import { Collapse, CollapseProps } from 'antd';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import type { CSSProperties } from 'react';
 
 const listItemFAQ: (panelStyle: CSSProperties) => CollapseProps['items'] = (panelStyle) => [
@@ -65,7 +65,7 @@ const ProductFAQ = () => {
   };
   return (
     <div className={styles.faq + ' container mx-auto'}>
-      <h2 className={styles.headerFQA}>คำถามที่พบบ่อย</h2>
+      <h2 className={`${styles.headerFQA}`}>คำถามที่พบบ่อย</h2>
       <Collapse
         collapsible="icon"
         defaultActiveKey={['1']}

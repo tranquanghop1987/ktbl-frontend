@@ -9,7 +9,7 @@ const ProductForm = () => {
   return (
     <div className="container mx-auto py-10  text-center">
       <h3 className="py-2 ">สมัครผลิตภัณฑ์</h3>
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4">
+      <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4 p-4">
         <div>
           <TextField id="outlined-basic" label="ชื่อผู้ให้ติดต่อกลับ" variant="outlined" fullWidth />
         </div>

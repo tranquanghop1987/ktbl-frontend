@@ -1,0 +1,22 @@
+.faq {
+  /* padding: 80px; */
+}
+.headerFQA {
+  padding-bottom: 30px;
+}
+
+.contentItem {
+  color: #62a5d2;
+}
+
+@media screen and (max-width: 768px) {
+  .faq {
+    padding: var(--padding-mobile-page);
+  }
+  .headerFQA {
+    text-align: center;
+    color: #484848;
+    font-weight: 700;
+    font-size: 24px;
+  }
+}
