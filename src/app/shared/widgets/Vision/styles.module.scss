@@ -1,0 +1,154 @@
+.vision {
+  background: url('/assets/images/vision-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 720px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.text {
+  margin-left: 200px;
+  padding: 80px;
+  max-width: 100%;
+}
+
+.title {
+  display: flex;
+  height: 36px;
+  flex-wrap: wrap;
+}
+
+.firstTitle {
+  color: #2b496b;
+}
+
+.secondTitle {
+  color: #ffffff;
+}
+
+.firstTitle,
+.secondTitle {
+  font-weight: 700;
+  font-size: 28px;
+}
+.content {
+  display: flex;
+  flex-wrap: nowrap;
+  color: #ffffff;
+  padding: 16px 0;
+  width: 520px;
+  font-weight: 400;
+  font-size: 18px;
+}
+.btnAboutCompany {
+  border-radius: 16px;
+  border: 1px solid;
+  height: 34px;
+}
+
+.visionBackgroundLeft,
+.visionBackgroundRight {
+  width: 50%;
+  height: 65%;
+  background-color: #b7c1c4;
+  position: absolute;
+  top: 35%;
+  opacity: 0.5;
+}
+.visionBackgroundLeft {
+  clip-path: polygon(0 0%, 0% 100%, 75% 100%);
+}
+
+.visionBackgroundRight {
+  right: 0;
+  clip-path: polygon(100% 0%, 25% 100%, 100% 100%);
+}
+
+@keyframes visionLeftIn {
+  0% {
+    left: -35%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes visionLeftOut {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -35%;
+  }
+}
+@keyframes visionRightIn {
+  0% {
+    right: -35%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes visionRightOut {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -35%;
+  }
+}
+
+@keyframes textIn {
+  0% {
+    transform: translate(-115%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes textOut {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-115%, 0);
+  }
+}
+
+.animation {
+  .visionBackgroundLeft {
+    animation: visionLeftIn 0.5s ease-out forwards;
+  }
+  .visionBackgroundRight {
+    animation: visionRightIn 0.5s ease-out forwards;
+  }
+  .text {
+    animation: textIn 0.5s ease-out forwards;
+  }
+}
+
+.animationOut {
+  .visionBackgroundLeft {
+    animation: visionLeftOut 0.5s ease-out forwards;
+  }
+  .visionBackgroundRight {
+    animation: visionRightOut 0.5s ease-out forwards;
+  }
+  .text {
+    animation: textOut 0.5s ease-out forwards;
+  }
+}
+
+@media (max-width: 767px) {
+  .text {
+    margin-left: 20px;
+    padding: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .content {
+    width: 100%;
+  }
+}
