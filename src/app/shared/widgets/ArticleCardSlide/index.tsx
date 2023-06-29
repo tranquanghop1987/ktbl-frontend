@@ -1,14 +1,14 @@
-'use client';
-import CardItem from '@/uikit/atoms/CardItem';
-import styles from './styles.module.css';
-import '../../../assets/css/slick.css';
-import '../../../assets/css/slick-theme.css';
-import Slider from 'react-slick';
-import { itemList } from '@/app/shared/modules/article/mock';
-import { useCallback, useEffect, useState } from 'react';
-import { getArticles } from '@/app/shared/modules/article/repo';
-import Loader from '@/uikit/atoms/Loader';
-import PrimaryButton from '../Button';
+"use client";
+import CardItem from "@/uikit/atoms/CardItem";
+import styles from "./styles.module.css";
+import "../../../assets/css/slick.css";
+import "../../../assets/css/slick-theme.css";
+import Slider from "react-slick";
+import { itemList } from "@/app/shared/modules/article/mock";
+import { useCallback, useEffect, useState } from "react";
+import { getArticles } from "@/app/shared/modules/article/repo";
+import Loader from "@/uikit/atoms/Loader";
+import PrimaryButton from "../Button";
 
 // const showItem = Math.round(globalThis?.window?.screen.width / 305) - 1;
 const showItem = 4;
@@ -32,7 +32,7 @@ const ArticleCardList = () => {
     setLoading(true);
     try {
       const filters = {
-        type: 'news',
+        type: "news",
       };
       const articles = await getArticles(filters);
       //const dtoArticles = mapDto(articles)
@@ -71,7 +71,7 @@ const ArticleCardList = () => {
     <div className={styles.article}>
       <div className={styles.header}>
         <div className={styles.title}>บทความ</div>
-        <PrimaryButton style={{ color: '#0080BD', border: 'none' }} text="กด" />
+        <PrimaryButton style={{ color: "#0080BD", border: "none" }} text="กด" />
       </div>
       <Slider {...settings}>
         {data &&

@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
-import { getArticles } from '@/app/shared/modules/article/repo';
+import { useCallback, useEffect, useState } from "react";
+import { getArticles } from "@/app/shared/modules/article/repo";
 
 /**
  * use for article listing slide, no show more or pagination

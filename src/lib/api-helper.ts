@@ -3,8 +3,10 @@
  * @param path
  * @author hoang.pt
  */
-export const getBackendURL = (path = '') => {
-  return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'}${path}`;
+export const getBackendURL = (path = "") => {
+  return `${
+    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
+  }${path}`;
 };
 
 /**
@@ -12,9 +14,11 @@ export const getBackendURL = (path = '') => {
  * @param path
  * @author hoang.pt
  */
-export const getMediaURL = (path = '') => {
+export const getMediaURL = (path = "") => {
   return `${
-    process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'
+    process.env.NEXT_PUBLIC_MEDIA_URL ||
+    process.env.NEXT_PUBLIC_STRAPI_API_URL ||
+    "http://localhost:1337"
   }${path}`;
 };
 
@@ -29,7 +33,7 @@ export const getBackendSeoMedia = (url: string | null) => {
   }
 
   // Return the full URL if the media is hosted on an external provider
-  if (url.startsWith('http') || url.startsWith('//')) {
+  if (url.startsWith("http") || url.startsWith("//")) {
     return url;
   }
 

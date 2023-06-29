@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './styles.module.scss';
+import React from "react";
+import styles from "./styles.module.scss";
 
 const CardItem = ({
   imageUrl,
@@ -15,7 +15,9 @@ const CardItem = ({
 }) => {
   return (
     <div className={`${styles.cardItem}`}>
-      <div className={styles.cardImage}>{imageUrl && <img src={imageUrl} alt="" />}</div>
+      <div className={styles.cardImage}>
+        {imageUrl && <img src={imageUrl} alt="" />}
+      </div>
       <div className={`${styles.content}`}>
         <div className={`flex flex-sb mb-2`}>
           <span className={styles.tag}>{tag}</span>

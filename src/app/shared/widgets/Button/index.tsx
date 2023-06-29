@@ -1,7 +1,7 @@
 function PrimaryButton({
-  text = '',
+  text = "",
   width,
-  className = '',
+  className = "",
   ...rest
 }: {
   text: string;

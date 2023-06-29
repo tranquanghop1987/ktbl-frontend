@@ -1,5 +1,5 @@
-import ActiveCSS from '@/uikit/atoms/ActiveCss';
-import Link from 'next/link';
+import ActiveCSS from "@/uikit/atoms/ActiveCss";
+import Link from "next/link";
 
 export const renderMenu = ({
   menus = [],
@@ -13,14 +13,24 @@ export const renderMenu = ({
   return (
     <>
       {!isFirst ? <ActiveCSS /> : null}
-      <ul className={`${isFirst ? 'menu nav-menu' : 'sub-nav'} ${className}`}>
+      <ul className={`${isFirst ? "menu nav-menu" : "sub-nav"} ${className}`}>
         {menus?.map((item, index) => {
           return (
-            <li key={index} className={isFirst ? 'menu-item  dropdown relative' : ' menu-item'}>
-              <Link href={''} className={isFirst ? 'nav__link ' : 'sub-nav__link'}>
+            <li
+              key={index}
+              className={
+                isFirst ? "menu-item  dropdown relative" : " menu-item"
+              }
+            >
+              <Link
+                href={""}
+                className={isFirst ? "nav__link " : "sub-nav__link"}
+              >
                 {item?.label}
               </Link>
-              {item?.children ? renderMenu({ menus: item.children, isFirst: false }) : null}
+              {item?.children
+                ? renderMenu({ menus: item.children, isFirst: false })
+                : null}
             </li>
           );
         })}

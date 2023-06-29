@@ -1,17 +1,23 @@
-'use client';
-import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import SelectMui, { SelectChangeEvent } from '@mui/material/Select';
+"use client";
+import * as React from "react";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import SelectMui, { SelectChangeEvent } from "@mui/material/Select";
 
 type Option = {
   lable: string;
   value: string;
 };
 
-export default function Select({ label = 'Age', options = [] }: { label?: string; options?: Array<Option> }) {
-  const [age, setAge] = React.useState('');
+export default function Select({
+  label = "Age",
+  options = [],
+}: {
+  label?: string;
+  options?: Array<Option>;
+}) {
+  const [age, setAge] = React.useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value);
