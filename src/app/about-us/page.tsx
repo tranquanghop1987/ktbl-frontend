@@ -2,7 +2,13 @@ import styles from './styles.module.scss';
 import Image from 'next/image';
 import Navbar from '@/app/shared/widgets/Navbar';
 
-const services = [
+interface ServiceItem {
+  title: string;
+  image: string;
+  content: string;
+}
+
+const services: ServiceItem[] = [
   {
     title: 'ประกัน',
     image: `/assets/images/about-us/insurance.png`,
@@ -28,7 +34,7 @@ const services = [
   }
 ]
 
-const serviceItem = (item) => {
+const serviceItem = (item: ServiceItem) => {
   return (
     <div className={styles.serviceItem}>
       <Image width={75} height={75} src={item.image} alt={'img'}/>
