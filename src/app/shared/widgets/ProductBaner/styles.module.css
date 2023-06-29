@@ -78,7 +78,8 @@
 }
 
 .productInfo {
-  background: url('/assets/images/product-bg-2.png');
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0) 5.94%, rgba(0, 0, 0, 0.69) 59.82%, #000 100%),
+    url('/assets/images/mixlandspace.png');
   height: 678px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -86,6 +87,7 @@
   align-items: center;
   padding-left: 80px;
   clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+  position: relative;
 }
 
 .itemDetail {
@@ -93,11 +95,14 @@
 }
 
 .titleProduct {
+  font-size: 22px;
+  font-weight: 700;
   color: #00a6e6;
 }
 
 .contentProduct {
-  color: #fff;
+  color: #e1e1e1;
+  font-size: 14px;
 }
 .btnMobile {
   display: none;
@@ -105,12 +110,35 @@
 .titleMobile {
   display: none;
 }
+.viewText {
+  width: 538px;
+}
+.carMobile {
+  display: none;
+}
 @media screen and (max-width: 600px) {
+  .titleProduct {
+    font-size: 18px;
+  }
+  .itemDetail {
+    align-items: flex-start;
+  }
+  .itemDetail ul li {
+    border-bottom: none;
+  }
+  .contentProduct {
+    color: #cacaca;
+    font-size: 18px;
+    width: 90%;
+  }
   .bnProduct {
     padding-left: 10px;
     text-align: center;
     clip-path: none;
     height: auto;
+  }
+  .viewText {
+    width: 100%;
   }
   .btnWeb {
     display: none;
@@ -132,9 +160,35 @@
   }
 
   .productInfo {
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 1.86%, rgba(0, 0, 0, 0.45) 14.31%, #000 25.52%);
     background-position: top;
     padding-left: 20px;
+    position: relative;
+    height: 100vh;
+    flex-direction: column;
+  }
+  .viewCar {
+    justify-content: flex-end;
+  }
+  .car2,
+  .car1 {
+    display: none;
+  }
+  .carMobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 20vh;
+  }
+  .viewCar {
+    position: absolute;
+    top: 30vh;
+  }
+  .car2 {
+    right: 30%;
   }
 
   .content {
@@ -152,5 +206,47 @@
   }
   .block {
     height: 75vh;
+  }
+}
+
+.car2 {
+  position: absolute;
+  right: 10%;
+  bottom: 5%;
+}
+.car1 {
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+}
+@keyframes carOne {
+  from {
+    right: -40%;
+  }
+}
+@keyframes cartwo {
+  from {
+    right: -15%;
+  }
+}
+
+.inView .car1 {
+  animation: carOne 0.5s;
+}
+.inView .car2 {
+  animation: cartwo 0.5s;
+  animation-delay: 0.3;
+}
+
+.inView li {
+  animation: textShow 0.5s;
+}
+@keyframes textShow {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  50% {
+    opacity: 1;
   }
 }

@@ -1,3 +1,4 @@
+import ActiveCSS from '@/uikit/atoms/ActiveCss';
 import Link from 'next/link';
 
 export const renderMenu = ({
@@ -10,18 +11,21 @@ export const renderMenu = ({
   className?: string;
 }): any => {
   return (
-    <ul className={`${isFirst ? 'menu nav-menu' : 'sub-nav'} ${className}`}>
-      {menus?.map((item, index) => {
-        return (
-          <li key={index} className={isFirst ? 'menu-item  dropdown' : ' menu-item'}>
-            <Link href={''} className={isFirst ? 'nav__link' : 'sub-nav__link'}>
-              {item?.label} {item?.children ? renderMenu({ menus: item.children, isFirst: false }) : null}
-            </Link>
-            {isFirst ? <div className="icon_image" /> : null}
-          </li>
-        );
-      })}
-    </ul>
+    <>
+      {!isFirst ? <ActiveCSS /> : null}
+      <ul className={`${isFirst ? 'menu nav-menu' : 'sub-nav'} ${className}`}>
+        {menus?.map((item, index) => {
+          return (
+            <li key={index} className={isFirst ? 'menu-item  dropdown relative' : ' menu-item'}>
+              <Link href={''} className={isFirst ? 'nav__link ' : 'sub-nav__link'}>
+                {item?.label}
+              </Link>
+              {item?.children ? renderMenu({ menus: item.children, isFirst: false }) : null}
+            </li>
+          );
+        })}
+      </ul>
+    </>
   );
 };
 // const LeftMenu = ({ mode, isModal, data }: { mode: any; isModal?: boolean; data: ItemType[] }) => {

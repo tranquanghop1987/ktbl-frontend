@@ -3,8 +3,19 @@
  * @param path
  * @author hoang.pt
  */
-export const getStrapiURL = (path = '') => {
+export const getBackendURL = (path = '') => {
   return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'}${path}`;
+};
+
+/**
+ * get media_url for multiple database
+ * @param path
+ * @author hoang.pt
+ */
+export const getMediaURL = (path = '') => {
+  return `${
+    process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'
+  }${path}`;
 };
 
 /**
@@ -12,7 +23,7 @@ export const getStrapiURL = (path = '') => {
  * @param url
  * @author hoang.pt
  */
-export const getStrapiMedia = (url: string | null) => {
+export const getBackendSeoMedia = (url: string | null) => {
   if (url == null) {
     return null;
   }
@@ -23,7 +34,7 @@ export const getStrapiMedia = (url: string | null) => {
   }
 
   // Otherwise prepend the URL path with the Strapi URL
-  return `${getStrapiURL()}${url}`;
+  return `${getMediaURL()}${url}`;
 };
 
 /**

@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const withAntdLess = require("next-plugin-antd-less");
+const path = require('path')
 
 const nextConfig = {
+    sassOptions: {
+        includePaths: [path.join(__dirname, 'styles')],
+    },
     experimental: {
         appDir: true,
     },
@@ -13,10 +17,6 @@ const nextConfig = {
                 port: '1337',
                 pathname: '/uploads/**',
             },
-            {
-                protocol: 'http',
-                hostname: 'abc.com',
-            }
         ],
     },
 }

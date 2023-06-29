@@ -28,7 +28,7 @@ const Navbar = ({ isHome = true }: { isHome?: boolean }) => {
   return (
     <nav className={`navbar ${navBgColor} ${!isHome ? 'main-bg' : ''}`}>
       <div className="logo">
-        <Link href={'/'}>
+        <Link href={'/'} className="flex">
           <img src="/assets/images/KTBL-logo2.svg" alt="" />
         </Link>
       </div>

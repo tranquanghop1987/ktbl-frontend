@@ -4,7 +4,6 @@ import styles from './styles.module.css';
 import ProductForm from '../../shared/widgets/ProductForm';
 import ProductFAQ from '@/app/shared/widgets/ProductFAQ';
 
-
 const Home = () => {
   return (
     <main className={styles.pageProduct}>

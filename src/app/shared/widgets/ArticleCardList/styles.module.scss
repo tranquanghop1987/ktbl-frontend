@@ -1,0 +1,116 @@
+.news,
+.article {
+
+  @media only screen and (max-width: 650px){
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  margin-top: 54px;
+
+  .newDetail {
+    position: relative;
+    opacity: 0;
+  }
+  .header {
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+  }
+}
+
+
+.allItems {
+  //display: flex;
+  //flex-wrap: wrap;
+}
+
+@keyframes titleAnimOut {
+  0% {
+    top: 0px;
+    opacity: 1
+  }
+  100% {
+    top: 200px;
+    opacity: 0
+  }
+}
+
+@keyframes titleAnim {
+  0% {
+    top: 200px;
+    opacity: 0
+  }
+  100% {
+    top: 0px;
+    opacity: 1
+  }
+}
+
+@keyframes itemAnim {
+  0% {
+    top: 200px;
+    opacity: 0
+  }
+  100% {
+    top: 0px;
+    opacity: 1
+  }
+
+}
+
+@keyframes itemAnimOut {
+  0% {
+    top: 0px;
+    opacity: 1
+  }
+  100% {
+    top: 50px;
+    opacity: 0
+  }
+}
+.animationOut {
+  .header {
+    position: relative;
+    animation: titleAnimOut 0.5s ease-out forwards;
+    opacity: 1;
+  }
+  .newDetail {
+    animation: itemAnimOut 0.5s ease-out forwards;
+    position: relative;
+
+  }
+}
+.animation {
+  .header {
+    position: relative;
+    animation: titleAnim 0.4s ease-out forwards;
+  }
+
+  .newDetail {
+    animation: itemAnim 0.5s ease-out forwards;
+    position: relative;
+
+    &:nth-of-type(2) {
+      animation-delay: 0.1s;
+      animation-duration: 0.4s;
+    }
+
+    &:nth-of-type(3) {
+      animation-delay: 0.2s;
+      animation-duration: 0.3s;
+    }
+
+    &:nth-of-type(4) {
+      animation-delay: 0.3s;
+      animation-duration: 0.2s;
+    }
+  }
+}

@@ -64,7 +64,7 @@ const ProductFAQ = () => {
     marginBottom: 24,
   };
   return (
-    <div className={styles.faq}>
+    <div className={styles.faq + ' container mx-auto'}>
       <h2 className={styles.headerFQA}>คำถามที่พบบ่อย</h2>
       <Collapse
         collapsible="icon"

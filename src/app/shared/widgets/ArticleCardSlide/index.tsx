@@ -10,13 +10,14 @@ import { useCallback, useEffect, useState } from 'react';
 import { getArticles } from '@/app/shared/modules/article/repo';
 import Loader from '@/uikit/atoms/Loader';
 
-const showItem = Math.round(globalThis?.window?.screen.width / 305) - 1;
+// const showItem = Math.round(globalThis?.window?.screen.width / 305) - 1;
+const showItem = 4;
 const settings = {
-  infinite: true,
+  infinite: false,
   slidesToShow: showItem < 2 ? 1 : showItem,
   slidesToScroll: 1,
-  autoplay: true,
   autoplaySpeed: 2000,
+  draggable: false,
 };
 
 /**
@@ -70,19 +71,20 @@ const ArticleCardList = () => {
     <div className={styles.article}>
       <div className={styles.header}>
         <div className={styles.title}>บทความ</div>
-        <Button style={{ color: '#0080BD' }}>กด</Button>
+        <Button style={{ color: '#0080BD', border: 'none' }}>กด</Button>
       </div>
       <Slider {...settings}>
-        {data && itemList.map((article, index) => (
-          <div className={styles.newDetail} key={index}>
-            <CardItem
-              imageUrl={article.imageUrl}
-              tag={article.tag}
-              createDate={article.createDate}
-              description={article.description}
-            />
-          </div>
-        ))}
+        {data &&
+          itemList.map((article, index) => (
+            <div className={styles.newDetail} key={index}>
+              <CardItem
+                imageUrl={article.imageUrl}
+                tag={article.tag}
+                createDate={article.createDate}
+                description={article.description}
+              />
+            </div>
+          ))}
       </Slider>
     </div>
   );

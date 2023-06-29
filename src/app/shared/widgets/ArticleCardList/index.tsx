@@ -1,56 +1,50 @@
 'use client';
 import CardItem from '@/uikit/atoms/CardItem';
-import { Button } from 'antd';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import '../../../assets/css/slick.css';
 import '../../../assets/css/slick-theme.css';
 import Loader from '@/uikit/atoms/Loader';
-import { getStrapiMedia } from '@/app/shared/utils/api-helper';
+import { getBackendSeoMedia } from '@/lib/api-helper';
 import { formatDate } from '@/app/shared/utils/date';
 import { useFindArticles } from '@/app/shared/modules/article/usecase';
+import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
 //import {itemList} from "@/app/shared/modules/article/mock";
 
 /**
  *  Section UI
  */
-const ArticleCardList = ({articleType}:{articleType: string}) => {
+const ArticleCardList = ({ articleType }: { articleType: string }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    rootMargin: '-100px 0px',
+  });
+
   const ARTICLE_LIMIT = 4;
   const { articles, isLoading } = useFindArticles(articleType, ARTICLE_LIMIT);
-
-  // const mapDto = (articles) => {
-  //   return articles.map(article => {
-  //     const featureImage = article.attributes.featureImage.data.attributes;
-  //     const articleInfo = article.attributes;
-  //     console.log(article)
-  //
-  //     return {
-  //       type: 'press',
-  //       description: articleInfo.description,
-  //       title: articleInfo.title,
-  //       featureImage: {
-  //         url: featureImage.url,
-  //         altText: featureImage.altText,
-  //       },
-  //     }
-  //   })
-  // };
 
   if (isLoading) return <Loader />;
 
   return (
-    <div className={styles.article}>
+    <div
+      ref={ref}
+      className={`container mx-auto ${styles.article} ${inView ? ` ${styles.animation}` : ` ${styles.animationOut}`}`}
+    >
       <div className={styles.header}>
         <div className={styles.title}>บทความ</div>
-        <Button style={{ color: '#0080BD' }}>ดูทั้งหมด</Button>
+        <Link href={'/#'} style={{ color: '#0080BD', border: 'none' }}>
+          ดูทั้งหมด
+        </Link>
       </div>
-      <div className={styles.allItems}>
+      <div className={`grid grid-cols-1 gap-20 sm:grid-cols-2 md:grid-cols-4`}>
         {articles.map((press, index) => {
-          const seoImgUrl = getStrapiMedia(press.attributes.feature_image?.data?.attributes?.url);
+          const seoImgUrl = getBackendSeoMedia(press.attributes.feature_image?.data?.attributes?.url);
           const humanCreatedDate = formatDate(press.attributes.publishedAt);
 
           return (
             <div className={styles.newDetail} key={index}>
               <CardItem
+                class={'items'}
                 imageUrl={seoImgUrl}
                 tag={press.attributes.type}
                 description={press.attributes.description}

@@ -1,9 +1,10 @@
 'use client';
-import styles from './style.module.css';
-import Button from '../Button';
+import styles from './style.module.scss';
+import PrimaryButton from '../Button';
 import { useState } from 'react';
 import { Col, Row } from 'antd';
 import { useRouter } from 'next/navigation';
+import { useInView } from 'react-intersection-observer';
 
 const HomeProduct = () => {
   const [active, setActive] = useState<string>('p1');
@@ -23,7 +24,7 @@ const HomeProduct = () => {
       description: 'รถกระบะ รถตู้ และรถยนต์นั่ง 4 ล้อทุกประเภท',
       idProduct: '123',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
-      backgroudLink: '/assets/images/product-bg.jpg',
+      backgroudLink: '/assets/images/product-bg.png',
     },
     {
       title: '2',
@@ -37,7 +38,7 @@ const HomeProduct = () => {
       description: 'รถกระบะ รถตู้ และรถยนต์นั่ง 4 ล้อทุกประเภท',
       idProduct: '123',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
-      backgroudLink: '/assets/images/product-bg.jpg',
+      backgroudLink: '/assets/images/product-bg.png',
     },
     {
       title: ' 4 ',
@@ -54,14 +55,27 @@ const HomeProduct = () => {
   const gotoPage = (idProduct: string) => () => {
     router.push(`products/${idProduct}`);
   };
+
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    rootMargin: '-400px 0px',
+  });
+
   return (
     <>
       <div
-        className={styles.hproduct}
+        className={styles.hproduct + ` w-full ${inView ? ` ${styles.animation}` : ` ${styles.animationOut}`}`}
+        ref={ref}
         style={{ backgroundImage: `url('${productDetail[page].backgroudLink}')`, transition: 'ease 0.2' }}
         id="product"
       >
-        <div className="flex-column align-center">
+        <div className={styles.carLeft}>
+          <img src="/assets/images/product-info-car-1.png" alt="" />
+        </div>
+        <div className={styles.carRight}>
+          <img src="/assets/images/product-info-car-2.png" alt="" />
+        </div>
+        <div className={styles.productInfoTitle + ` flex-column align-center`}>
           <div className={styles.productTitle}>ผลิตภัณฑ์สินเชื่อ</div>
           <Row className={styles.productList} style={{ margin: '8px' }}>
             {items.map((item, index) => {
@@ -83,7 +97,7 @@ const HomeProduct = () => {
           <div className={styles.contentTitle}>{productDetail[page].title}</div>
           <div className={styles.contentDescription + ' .mt-8'}>{productDetail[page].description}</div>
           <div className="flex justify-content-center mt-64">
-            <Button text="รายละเอียดผลิตภัณฑ์" onClick={gotoPage(productDetail[page].idProduct)}></Button>
+            <PrimaryButton text="รายละเอียดผลิตภัณฑ์" onClick={gotoPage(productDetail[page].idProduct)}></PrimaryButton>
           </div>
         </div>
       </div>

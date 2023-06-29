@@ -1,5 +1,5 @@
 import qs from 'qs';
-import { getStrapiURL } from './api-helper';
+import { getBackendURL } from '../../../lib/api-helper';
 
 export const fetchAPI = async (path: string, urlParamsObject = {}, options = {}) => {
   try {
@@ -14,13 +14,13 @@ export const fetchAPI = async (path: string, urlParamsObject = {}, options = {})
 
     // Build request URL
     const queryString = qs.stringify(urlParamsObject);
-    const requestUrl = `${getStrapiURL(`/api${path}${queryString ? `?${queryString}` : ''}`)}`;
+    const requestUrl = `${getBackendURL(`/api${path}${queryString ? `?${queryString}` : ''}`)}`;
 
     // Trigger API call
     const response = await fetch(requestUrl, mergedOptions);
     const data = await response.json();
     return data;
   } catch (error) {
-    throw new Error(`Please check if your server is running and you set all the required tokens.`);
+    // throw new Error(`Please check if your server is running and you set all the required tokens.`);
   }
 };

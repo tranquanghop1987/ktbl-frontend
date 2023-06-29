@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "variables.module.scss";
+@import 'variables.module.scss';
+
+@font-face {
+  font-family: 'Krungthai Fast';
+  src: url('/assets/font/KrungthaiFastWeb-Regular.woff') format('woff'),
+    url('/font/DB Lim X Bd It v3.2.1.ttf') format('truetype'),
+    url('/font/KrungthDB Lim X Bd v3.2.1.woff') format('truetype'),
+    url('/font/DB Lim X It v3.2.1.ttf') format('truetype'), url('/font/DB Lim X Med It v3.2.1.ttf') format('truetype'),
+    url('/font/DB Lim X Med v3.2.1.ttf') format('truetype'), url('/font/DB Lim X v3.2.1.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 * {
   box-sizing: border-box;
@@ -15,6 +27,7 @@
 }
 
 body {
+  font-family: 'Krungthai Fast';
   color: rgb(var(--foreground-rgb));
   position: relative;
 }
@@ -236,6 +249,9 @@ ul li {
     justify-content: space-between;
     padding-inline: 10;
   }
+  .banner-image {
+    display: none;
+  }
 }
 .navbar .ant-layout-header {
   /* background-color: transparent; */
@@ -282,5 +298,5 @@ input:not(:placeholder-shown) + .label-float {
 }
 
 .color-primary {
-    color: $primary-color;
+  color: $primary-color;
 }

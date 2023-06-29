@@ -4,12 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  justify-content: space-between;
-  /* display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(auto-fit, 240px);
-  grid-gap: 22px;
-  justify-content: center; */
+  justify-content: center;
 }
 .footer h3 {
   color: #0b7199;
@@ -55,19 +50,39 @@
   border-top: 0.5px solid var(--grey-grey-088-e-1, #e1e1e1);
 }
 .logoFooter {
-  width: 336px;
+  /* width: 336px; */
 }
 @media screen and (max-width: 600px) {
   .footer {
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 20px;
+    padding: 20px;
+  }
+  .active {
+    height: 30px;
   }
 
   .footer .footerPanel {
     display: none;
   }
-  .footer h3:hover + .footerPanel {
+
+  .footerTitlePanel {
+    width: 100%;
+    padding: 0.5rem;
+    border-bottom: 1px solid #c4c4c4;
+    position: relative;
+  }
+  .footerTitlePanel:after {
+    content: '\002B';
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    bottom: 4px;
+  }
+  .active:checked + .footerPanel {
     display: flex;
+  }
+  .footerTitlePanel:has(+ .active:checked):after {
+    transform: rotate(135deg);
   }
 }

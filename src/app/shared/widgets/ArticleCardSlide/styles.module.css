@@ -10,8 +10,14 @@
 }
 
 .newDetail {
-  padding: 10px;
+  padding-right: 20px;
   height: 450px;
+  width: 25%;
+}
+
+.cardList {
+  display: flex;
+  justify-content: center;
 }
 
 .allItems {
@@ -21,4 +27,15 @@
 
 .allItems .newDetail {
   width: 25%;
+}
+
+@media (max-width: 576px) {
+  .newDetail {
+    padding-right: 20px;
+    width: 100%;
+  }
+
+  .cardList{
+    justify-content: flex-start;
+  }
 }

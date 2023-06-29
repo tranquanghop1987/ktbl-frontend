@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 const Loader = () => {
   return (
     <div className="absolute inset-0 flex items-center justify-center z-50  bg-opacity-40 bg-gray-500">

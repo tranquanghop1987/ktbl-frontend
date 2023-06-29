@@ -1,16 +1,56 @@
 .bannerWrapper {
 
-    color: #FFFFFF;
-    position: relative;
+  color: #FFFFFF;
+  position: relative;
 
-    @media (min-width: 1200px) {
-        & {
-            min-height: 450px !important;
-            padding: 96px;
-        }
+  @media (min-width: 1200px) {
+    & {
+      min-height: 450px !important;
+      padding: 96px;
     }
+  }
+
+  img {
+    z-index: -1;
+  }
+}
+
+.historySection {
+  .imageContainer {
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 450px;
+    }
+  }
+}
+
+.missionSection {
+  padding: 100px 0px 50px 0px;
+  background: #e6e6e6;
+}
+
+.serviceSection {
+  @apply container;
+  @apply mx-auto;
+  padding: 75px 0 32px;
+
+  .serviceItem {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
     img {
-        z-index: -1;
+      margin-bottom: 32px;
     }
+
+    h1 {
+      margin-bottom: 32px;
+    }
+  }
+}
+.coreValueSection {
+padding: 50px;
 }

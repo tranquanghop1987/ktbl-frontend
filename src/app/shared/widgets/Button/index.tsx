@@ -1,28 +1,12 @@
-import { Button as BtnAntd } from 'antd';
-import styles from './style.module.css';
-
-function Button({
-  text = '',
-  type = 'primary',
-  className,
-  width,
-  ...rest
-}: {
-  text: string;
-  type?: any;
-  className?: string;
-  width?: number;
-  [x: string]: any;
-}) {
+function PrimaryButton({ text = '', width, ...rest }: { text: string; type?: any; width?: number; [x: string]: any }) {
   return (
-    <BtnAntd
-      type={type}
-      className={`${styles.button} ${className}`}
-      style={width ? { width: `${width}px` } : {}}
+    <button
+      className={`bg-gradient-to-b from-cyan-500 to-blue-500 hover:from-cyan-700 hover:to-blue-700 text-white font-bold py-2 px-4 rounded-full`}
+      style={{ width }}
       {...rest}
     >
       {text}
-    </BtnAntd>
+    </button>
   );
 }
-export default Button;
+export default PrimaryButton;

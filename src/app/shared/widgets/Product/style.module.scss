@@ -1,0 +1,168 @@
+.hproduct {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 789px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 54px;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.carLeft {
+  position: absolute;
+  left: -20%;
+  height: 50%;
+  top: 48%;
+  width: 50%;
+}
+
+.carRight {
+  position: absolute;
+  right: -28%;
+  height: 50%;
+  top: 40%;
+  transform: translate(0, -27%);
+}
+
+@keyframes carLeftIn {
+  0% {
+    left: -20%;
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes carLeftOut {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -20%;
+  }
+}
+@keyframes carRightIn {
+  0% {
+    right: -10%;
+    /* transform: translate(0, -40%);  */
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes carRightOut {
+  from {
+    transform: translate(-34%, 0);
+  }
+}
+
+@keyframes productTitleIn {
+  0% {
+    opacity: 1;
+    transform: translate(0, 200%);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes productTitleOut {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    /* top: 50%; */
+    transform: translate(0, 100%);
+    opacity: 0;
+  }
+}
+@keyframes contentIn {
+  0% {
+    transform: translate(0, -100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes contentOut {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, -100%);
+    opacity: 0;
+  }
+}
+
+.productTitle {
+  color: #0b7199;
+  font-weight: 700;
+  font-size: 24px;
+}
+.productList {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 20px;
+  color: #262626;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.contentTitle {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+.contentDescription {
+  color: #e1e1e1;
+  font-size: 18px;
+  font-weight: 400;
+}
+.content {
+  margin-bottom: 64px;
+  gap: 20px;
+}
+.active {
+  border-bottom: 4px solid #0b7199;
+}
+
+.animation {
+  .carLeft {
+    animation: carLeftIn 0.5s ease-out forwards;
+  }
+  .carRight {
+    animation: carRightIn 0.5s ease-out forwards;
+  }
+  .productInfoTitle {
+    animation: productTitleIn 0.5s ease-out forwards;
+  }
+  .content {
+    animation: contentIn 0.5s ease-out forwards;
+  }
+}
+
+.animationOut {
+  .carLeft {
+    animation: carLeftOut 0.5s ease-out forwards;
+  }
+  .carRight {
+    animation: carRightOut 0.5s ease-out forwards;
+  }
+  .productInfoTitle {
+    animation: productTitleOut 0.5s ease-out forwards;
+  }
+  .content {
+    animation: contentOut 0.5s ease-out forwards;
+  }
+}

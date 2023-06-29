@@ -1,6 +1,6 @@
 .ourServices {
-  height: 393px;
   padding-top: 54px;
+  padding-bottom: 70px;
   background: linear-gradient(180deg, #ffffff 0%, #acccdd 100%);
 
   .title {
@@ -10,6 +10,11 @@
     font-size: 24px;
     display: flex;
     justify-content: center;
+  }
+
+  @media only screen and (max-width: 650px){
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 @keyframes titleAnimOut {
@@ -31,14 +36,16 @@
   100% { top:50px; opacity: 0}
 }
 .itemList {
-  display: flex;
+
+  //display: flex;
   gap: 21px;
-  justify-content: center;
+  //justify-content: center;
   flex-direction: row;
+  flex-wrap: wrap;
 
   .items {
-    width: 305px;
-    height: 203.333px;
+    aspect-ratio: 3/2;
+    width: 100%;
     border-radius: 6px;
     position: relative;
     opacity: 0;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const CardItem = ({
   imageUrl,
@@ -14,11 +14,10 @@ const CardItem = ({
   [x: string]: any;
 }) => {
   return (
-    <div className={`${styles.cardItem} gap-8 flex-column`}>
+    <div className={`${styles.cardItem}`}>
       <div className={styles.cardImage}>{imageUrl && <img src={imageUrl} alt="" />}</div>
-
-      <div className={`${styles.content} flex-column gap-8 `}>
-        <div className={`flex flex-sb `}>
+      <div className={`${styles.content}`}>
+        <div className={`flex flex-sb mb-2`}>
           <span className={styles.tag}>{tag}</span>
           <div className={styles.createDate}>{createDate}</div>
         </div>

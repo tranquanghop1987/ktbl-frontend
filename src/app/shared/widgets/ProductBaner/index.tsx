@@ -1,9 +1,16 @@
 'use client';
-import { Breadcrumb, Col, Row, Typography } from 'antd';
+import { Breadcrumb, Col, Row } from 'antd';
 import styles from './styles.module.css';
-import Button from '../Button';
-const { Link } = Typography;
+import PrimaryButton from '../Button';
+import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
+
 function ProductBaner() {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    rootMargin: '-300px 0px',
+  });
+
   const detailList = [
     {
       title: 'อนุมัติง่าย รู้ผลไว ไม่ต้องค้ำประกัน',
@@ -44,7 +51,7 @@ function ProductBaner() {
           </div>
           <div className={styles.header}>บริการเช่าแบบลีสซิ่ง</div>
           <div>
-            <Typography.Title level={2}>รถยนต์นั่ง 4 ล้อทุกประเภท</Typography.Title>
+            <h2>รถยนต์นั่ง 4 ล้อทุกประเภท</h2>
           </div>
           <div className={styles.description}>
             ผลิตภัณฑ์สินเชื่อเช่ารถกระบะ หรือรถยนต์นั่ง 4 ล้อทุกประเภทแบบลีสซิ่งเพื่อธุรกิจมีให้เลือกทั้ง
@@ -52,11 +59,11 @@ function ProductBaner() {
           </div>
         </div>
         <div className={styles.btnMobile}>
-          <Button text="สมัครผลิตภัณฑ์" className={styles.button} />
+          <PrimaryButton text="สมัครผลิตภัณฑ์" className={styles.button} />
         </div>
         <div className={styles.blockItem}>
           <div className={styles.titleMobile}>
-            <Typography.Title level={3}>รถยนต์นั่ง 4 ล้อทุกประเภท</Typography.Title>
+            <h3>รถยนต์นั่ง 4 ล้อทุกประเภท</h3>
           </div>
           <div className={`flex align-baseline gap-20 ${styles.item}`}>
             <div className="logo ">
@@ -65,7 +72,7 @@ function ProductBaner() {
             <div>
               <ul>
                 <li className={styles.itemTitle}>
-                  ทรัพย์สินใหม่ <Link>New Car </Link>
+                  ทรัพย์สินใหม่ <Link href={''}>New Car </Link>
                 </li>
                 <li>1. ทรัพย์สินใหม่ที่ยังไม่ผ่านการใช้งาน</li>
                 <li>2. ทรัพย์สินที่เคยมีการจดทะเบียนครั้งแรกมาแล้วไม่เกิน 6 เดือน</li>
@@ -79,7 +86,7 @@ function ProductBaner() {
             <div>
               <ul>
                 <li className={styles.itemTitle}>
-                  ทรัพย์สินใช้แล้ว <Link>Used Car</Link>{' '}
+                  ทรัพย์สินใช้แล้ว <Link href={''}>Used Car</Link>{' '}
                 </li>
                 <li>อายุรถไม่เกิน 9 ปี</li>
               </ul>
@@ -87,7 +94,7 @@ function ProductBaner() {
           </div>
         </div>
         <div className={styles.btnWeb}>
-          <Button text="สมัครผลิตภัณฑ์" className={styles.button} />
+          <PrimaryButton text="สมัครผลิตภัณฑ์" className={styles.button} />
         </div>
       </div>
       <div>
@@ -107,11 +114,15 @@ function ProductBaner() {
           </Col>
         </Row>
       </div>
-      <div className={styles.productInfo}>
-        <div>
-          <ul className="flex-column gap-20">
+      <div className={`${styles.productInfo}   ${inView ? styles.inView : styles.inOut}`} ref={ref}>
+        <div className={styles.carMobile}>
+          <img src="/assets/images/mobie_product.png" alt="" />
+        </div>
+
+        <div className={`${styles.viewCar} container`}>
+          <ul className={`${styles.viewText} flex-column gap-20`}>
             {detailList.map((item, index) => (
-              <li key={index} className={styles.itemDetail}>
+              <li key={index} className={`${styles.itemDetail}  `}>
                 <img src="/assets/icons/checked.svg" alt="" className="mr-18" />
                 <div>
                   <h2 className={styles.titleProduct}>{item.title}</h2>
@@ -121,6 +132,8 @@ function ProductBaner() {
             ))}
           </ul>
         </div>
+        <img className={styles.car2} src="/assets/images/product_car2.png" alt="" />
+        <img className={styles.car1} src="/assets/images/product_car1.png" alt="" />
       </div>
     </div>
   );
