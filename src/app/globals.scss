@@ -106,6 +106,7 @@ ul li {
   background-position: center;
   position: relative;
   height: 100vh;
+  transition: 0.3;
 }
 .banner-image {
   width: 100%;
@@ -182,9 +183,10 @@ ul li {
 .banner-animation .scroll-down {
   animation: totop 1s;
 }
-.banner-animation .banner-image {
+.banner-animation {
   opacity: 1;
   animation: bannerShow 2s;
+  background-image: url('/assets/images/KTBL-logo2.png');
 }
 
 .banner-animationOut .scroll-down {
@@ -209,7 +211,9 @@ ul li {
 }
 @keyframes bannerShow {
   from {
-    opacity: 0;
+    background-image: url('/assets/images/banner-bg.png');
+
+    opacity: 1;
   }
 }
 @keyframes bannerNotShow {

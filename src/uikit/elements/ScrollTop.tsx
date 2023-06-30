@@ -1,21 +1,21 @@
-"use client";
-import { useEffect, useRef } from "react";
+'use client';
+import { useEffect, useRef } from 'react';
 
 function ScrollTop() {
   //Update Header Style and Scroll to Top
   const refScroll = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const mainHeader = document.getElementById("main-header");
+    const mainHeader = document.getElementById('main-header');
     if (mainHeader) {
       const windowpos = document.documentElement.scrollTop;
       const scrollLink = refScroll.current;
       if (windowpos >= 110) {
-        mainHeader.classList.add("fixed-header");
-        scrollLink?.classList.add("open");
+        mainHeader.classList.add('fixed-header');
+        scrollLink?.classList.add('open');
       } else {
-        mainHeader.classList.remove("fixed-header");
-        scrollLink?.classList.remove("open");
+        mainHeader.classList.remove('fixed-header');
+        scrollLink?.classList.remove('open');
       }
     }
   }, []);
@@ -23,11 +23,7 @@ function ScrollTop() {
     document.documentElement.scrollTop = 0;
   };
   return (
-    <button
-      onClick={onClick}
-      className="scroll-top style-two scroll-to-target"
-      data-target="html"
-    >
+    <button onClick={onClick} className="scroll-top style-two scroll-to-target" data-target="html">
       <span className="fa fa-arrow-up"></span>
     </button>
   );

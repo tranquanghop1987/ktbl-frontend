@@ -1,30 +1,22 @@
-"use client";
-import { Button } from "antd";
-import styles from "./styles.module.scss";
-import { useInView } from "react-intersection-observer";
+'use client';
+import { Button } from 'antd';
+import styles from './styles.module.scss';
+import { useInView } from 'react-intersection-observer';
 function Vision() {
   const { ref, inView } = useInView({
     triggerOnce: false,
-    rootMargin: "-400px 0px",
+    rootMargin: '-400px 0px',
   });
   return (
-    <div
-      className={
-        styles.vision +
-        ` w-full ${inView ? ` ${styles.animation}` : ` ${styles.animationOut}`}`
-      }
-      ref={ref}
-    >
+    <div className={styles.vision + ` w-full ${inView ? ` ${styles.animation}` : ` ${styles.animationOut}`}`} ref={ref}>
       <div className={styles.text}>
         <div className={styles.title}>
-          <h2 className={styles.firstTitle}>GROWING TOGETHER</h2>
-          <h2 className={styles.secondTitle}>ก้าวไกล ไปกับคุณ</h2>
+          <h2 className={styles.firstTitle}>GROWING TOGETHER </h2>
+          <h2 className={`${styles.secondTitle} ml-2`}>ก้าวไกล ไปกับคุณ</h2>
         </div>
         <div className={styles.content}>
-          มุ่งมั่นพัฒนาศักยภาพของบุคลากร และสร้างการบริการที่มีคุณค่า
-          เพื่อสนับสนุนการเติบโต และความมั่งคั่งแก่ลูกค้า
-          สร้างคุณภาพที่ดีขึ้นแก่สังคม
-          และสร้างผลตอบแทนที่ดีอย่างยั่งยืนแก่ผู้ถือหุ้น
+          มุ่งมั่นพัฒนาศักยภาพของบุคลากร และสร้างการบริการที่มีคุณค่า เพื่อสนับสนุนการเติบโต และความมั่งคั่งแก่ลูกค้า
+          สร้างคุณภาพที่ดีขึ้นแก่สังคม และสร้างผลตอบแทนที่ดีอย่างยั่งยืนแก่ผู้ถือหุ้น
         </div>
         <Button className={styles.btnAboutCompany} ghost>
           เกี่ยวกับบริษัท

@@ -1,6 +1,6 @@
-"use client";
-import { ArrowDownOutlined } from "@ant-design/icons";
-import Link from "next/link";
+'use client';
+import { ArrowDownOutlined } from '@ant-design/icons';
+import Link from 'next/link';
 
 function ScrollDown() {
   return (

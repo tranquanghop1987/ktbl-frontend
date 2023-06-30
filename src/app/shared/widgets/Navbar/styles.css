@@ -1,6 +1,13 @@
 .main-bg {
   background: var(--ktb-solid-krungthai-blue);
-  position: fixed;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+}
+.page-bg {
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,7 +23,7 @@
   flex-direction: row;
   padding: 10px 80px;
   z-index: 1000;
-  position: fixed;
+  position: sticky;
   width: 100%;
 }
 .push-left {
@@ -117,7 +124,9 @@
 }
 .sub-nav:hover {
   display: flex;
+  flex-direction: column;
   gap: 8px;
+  transition: 0.3s;
 }
 .menu-item:hover .icon_image {
   transform: rotate(180deg);
