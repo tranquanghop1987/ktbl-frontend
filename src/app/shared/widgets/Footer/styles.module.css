@@ -1,4 +1,6 @@
 .footer {
+  border-top: 0.5px solid #f0f0f0;
+
   padding: 40px 80px;
   background-image: url('/assets/images/foodter-bg.jpg');
   background-repeat: no-repeat;

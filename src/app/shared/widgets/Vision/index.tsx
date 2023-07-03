@@ -2,6 +2,8 @@
 import { Button } from 'antd';
 import styles from './styles.module.scss';
 import { useInView } from 'react-intersection-observer';
+import React from "react";
+import Image from "next/image";
 function Vision() {
   const { ref, inView } = useInView({
     triggerOnce: false,
@@ -26,8 +28,12 @@ function Vision() {
       <Image src="/assets/images/vision-right.png" width={500} height={500} alt="Picture of the author" />
       <Image src="/assets/images/Vector 5.png" width={500} height={500} alt="Picture of the author" /> */}
 
-      <div className={styles.visionBackgroundLeft}></div>
-      <div className={styles.visionBackgroundRight}></div>
+      <div className={styles.visionBackgroundLeft}>
+        <Image src="/assets/images/vision-left.png" alt="zv" fill />
+      </div>
+      <div className={styles.visionBackgroundRight}>
+        <Image src="/assets/images/vision-right.png" alt="zv" fill />
+      </div>
     </div>
   );
 }

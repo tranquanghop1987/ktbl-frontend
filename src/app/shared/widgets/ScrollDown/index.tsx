@@ -1,15 +1,18 @@
 'use client';
+import { scrollToTargetAdjusted } from '@/lib/common';
 import { ArrowDownOutlined } from '@ant-design/icons';
-import Link from 'next/link';
 
-function ScrollDown() {
+const ScrollDown = () => {
+  const onClick = () => {
+    scrollToTargetAdjusted('product', 66);
+  };
   return (
     <div className="scroll-down">
-      <Link href="#product" className="flex flex-column align-center">
+      <span onClick={onClick} className="flex flex-column align-center">
         <ArrowDownOutlined />
         <span>Scroll down</span>
-      </Link>
+      </span>
     </div>
   );
-}
+};
 export default ScrollDown;

@@ -4,19 +4,25 @@ import Link from 'next/link';
 import './styles.css';
 import { items } from '@/app/shared/modules/global';
 import { renderMenu } from './section/LeftMenu';
+import { usePathname } from 'next/navigation';
 
 const Navbar = ({ isHome = true }: { isHome?: boolean }) => {
   const [navBgColor, setNavBgColor] = useState('transparent');
-
+  const pathname = usePathname();
   const listenScrollEvent = () => {
     window.scrollY > 50 ? setNavBgColor('main-bg') : setNavBgColor('');
   };
   useEffect(() => {
-    window.addEventListener('scroll', listenScrollEvent);
-    return () => {
-      window.removeEventListener('scroll', listenScrollEvent);
-    };
-  }, []);
+    if (pathname === '/') {
+      window.addEventListener('scroll', listenScrollEvent);
+      return () => {
+        window.removeEventListener('scroll', listenScrollEvent);
+      };
+    } else {
+      setNavBgColor('main-bg');
+    }
+  }, [pathname]);
+
   // If you do not want to auto-close the mobile drawer when a path is selected
   // Delete or comment out the code block below
   // From here

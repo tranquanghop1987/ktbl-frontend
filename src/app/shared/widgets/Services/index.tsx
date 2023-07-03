@@ -6,19 +6,19 @@ import Image from 'next/image';
 const itemList = [
   {
     label: 'ประกันภัย',
-    imageUrl: '/assets/images/ourServices_1.png',
+    imageUrl: '/assets/images/insurance.png',
   },
   {
     label: 'ต่อภาษี',
-    imageUrl: '/assets/images/ourServices_1.png',
+    imageUrl: '/assets/images/insurance-agent.png',
   },
   {
     label: 'โอนกรรมสิทธิ์',
-    imageUrl: '/assets/images/ourServices_1.png',
+    imageUrl: '/assets/images/shutterstock_1.png',
   },
   {
     label: 'โปรโมชั่น',
-    imageUrl: '/assets/images/ourServices_1.png',
+    imageUrl: '/assets/images/shutterstock.png',
   },
 ];
 

@@ -1,0 +1,26 @@
+.insurance {
+  display: flex;
+  flex-direction: column;
+  margin-top: 68px;
+  ol {
+    // counter-reset: item;
+    padding-inline-start: 40px;
+  }
+  // ul li {
+  //   list-style: none;
+  // }
+  // li {
+  //   display: block;
+  // }
+  // li:before {
+  //   // content: counters(item, '.') ' ';
+  //   counter-increment: item;
+  // }
+  .banner {
+    background: url('/assets/images/insurance/Hero_banner.png'), rgba(250, 250, 250, 0.7);
+    backdrop-filter: blur(200px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+}

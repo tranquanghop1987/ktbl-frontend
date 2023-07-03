@@ -221,7 +221,7 @@ ul li {
     opacity: 1;
   }
 }
-.scroll-down a {
+.scroll-down span {
   text-decoration: none;
   color: #ffffff;
 }
@@ -304,4 +304,14 @@ input:not(:placeholder-shown) + .label-float {
 
 .color-primary {
   color: $primary-color;
+}
+
+.slideWraper {
+  .slick-list {
+    padding: 0px !important;
+    height: 100% !important;
+  }
+  .slick-slide {
+    padding: 10px 8px;
+  }
 }

@@ -4,10 +4,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 99999;
 }
 .page-bg {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -23,8 +22,9 @@
   flex-direction: row;
   padding: 10px 80px;
   z-index: 1000;
-  position: sticky;
+  position: fixed;
   width: 100%;
+  z-index: 99999;
 }
 .push-left {
   margin-left: auto;
@@ -116,7 +116,7 @@
   border-radius: 0 0 8px 8px;
   list-style: none;
   width: 260px;
-  top: 2rem;
+  top: 1.5rem;
 }
 
 .nav__link:hover ~ .sub-nav {
@@ -125,7 +125,6 @@
 .sub-nav:hover {
   display: flex;
   flex-direction: column;
-  gap: 8px;
   transition: 0.3s;
 }
 .menu-item:hover .icon_image {
