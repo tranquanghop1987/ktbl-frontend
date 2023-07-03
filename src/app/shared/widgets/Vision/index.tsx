@@ -2,8 +2,8 @@
 import { Button } from 'antd';
 import styles from './styles.module.scss';
 import { useInView } from 'react-intersection-observer';
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 function Vision() {
   const { ref, inView } = useInView({
     triggerOnce: false,

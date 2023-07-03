@@ -1,0 +1,80 @@
+.insurance {
+  display: flex;
+  flex-direction: column;
+  margin-top: 68px;
+  ol {
+    counter-reset: item;
+    padding-inline-start: 1rem;
+  }
+  ul li {
+    list-style: none;
+  }
+  li {
+    display: block;
+  }
+  ol li:before {
+    content: counters(item, '.') ' ';
+    counter-increment: item;
+  }
+  .banner {
+    background: url('/assets/images/insurance/Hero_banner.png');
+    backdrop-filter: blur(200px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    color: #ffffff;
+    height: 600px;
+    h3 {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .content {
+      width: 40%;
+    }
+    @media screen and (max-width: 768px) {
+      .content {
+        width: 100%;
+        padding: 8px;
+      }
+      color: #cacaca;
+      height: auto;
+      background: #000000;
+    }
+  }
+  .ownership {
+    h2 {
+      color: #262626;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 32px;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    p {
+      color: var(--ktb-solid-krungthai-blue);
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+  .taps-content {
+    background-color: #000000;
+    color: #00a6e6;
+    padding: 40px 24px;
+    ol li:before {
+      content: ' ';
+    }
+    ol li {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    top: 15%;
+  }
+}

@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 
 export type TabsProps = { key: string; label: string; children?: React.ReactNode };
-const Tab = ({ items = [] }: { items: Array<TabsProps> }) => {
-  const [active, setActive] = useState('');
+const Tab = ({ items = [], defaultActiveKey }: { items: Array<TabsProps>; defaultActiveKey?: string }) => {
+  const [active, setActive] = useState(defaultActiveKey);
   const handelClick = (key: string) => () => {
     setActive(key);
   };
