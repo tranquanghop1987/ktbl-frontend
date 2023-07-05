@@ -1,0 +1,86 @@
+.wrapper {
+  .banner {
+    @apply relative;
+    .imgc {
+      height: 600px;
+    }
+
+    .descWrapper {
+      @apply absolute;
+      width: 100%;
+      bottom: 48%;
+
+      .desc {
+        @apply container mx-auto;
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  .contactwrapper {
+    padding: 50px 0;
+    background: url("/assets/images/contact-us/sme-image-7.jpg");
+
+    .headtitle {
+      @apply container mx-auto text-center text-4xl;
+      color: #00A4E4 !important;
+    }
+
+    .infoWraper {
+      @apply container pt-4;
+      display: flex;
+      justify-content: center;
+      gap: 120px;
+      flex-wrap: wrap;
+
+      .block {
+        @apply text-left;
+        color: #043d5d !important;
+
+        .title {
+          @apply text-2xl;
+        }
+      }
+    }
+  }
+
+  .addressWraper {
+    background: url("/assets/images/contact-us/contact-bg-1.jpg");
+
+    .contentWraper {
+      padding: 50px 0;
+      @apply container mx-auto;
+
+      img {
+        @apply rounded;
+      }
+    }
+  }
+
+  .socialBlock {
+    @apply container mx-auto;
+    overflow: hidden;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 30px;
+
+    .title {
+      font-size: 2rem;
+      line-height: 1.5;
+      color: #00A4E4 !important;
+    }
+
+    .socialList {
+      @apply grid grid-cols-5;
+      @apply pt-4;
+      .item {
+        img {
+          @apply mx-auto;
+          margin-bottom: 20px;
+        }
+
+        @apply text-center;
+      }
+    }
+  }
+}

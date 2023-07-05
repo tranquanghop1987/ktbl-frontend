@@ -1,0 +1,23 @@
+.wrapper {
+  padding-top: 140px;
+
+  .mainContent {
+    @apply container mx-auto;
+
+    .title {
+      @apply text-4xl font-bold;
+      color: #00a6e6;
+    }
+    .desc {
+      @apply text-2xl;
+    }
+    .list {
+      margin-top: 2rem;
+      padding-left: 1rem;
+      .link {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

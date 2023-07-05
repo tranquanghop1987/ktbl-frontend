@@ -4,6 +4,14 @@
 
 @import 'variables.module.scss';
 
+
+//theme
+// import "primereact/resources/themes/lara-light-indigo/theme.css";
+
+// //core
+// import "primereact/resources/primereact.min.css";
+
+
 @font-face {
   font-family: 'Krungthai Fast';
   src: url('/assets/font/KrungthaiFastWeb-Regular.woff') format('woff'),
@@ -221,7 +229,7 @@ ul li {
     opacity: 1;
   }
 }
-.scroll-down span {
+.scroll-down a {
   text-decoration: none;
   color: #ffffff;
 }
@@ -313,5 +321,35 @@ input:not(:placeholder-shown) + .label-float {
   }
   .slick-slide {
     padding: 10px 8px;
+  }
+}
+
+select.camil {
+  background: url('/assets/images/icon-arrow-dd-gray.png') 94% no-repeat rgba(0,0,0,.2)!important;
+  background-size: 17px!important;
+  color: #FFF;
+  border: none;
+  font-size: 18px;
+  height: 50px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  padding: 10px 55px 10px 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+
+  }
+}
+
+.block-icon {
+  display: flex;
+  align-items: center;
+  .icon {
+    margin-right: 5px;
+    height: fit-content;
   }
 }

@@ -1,0 +1,16 @@
+.success {
+  margin-top: 66px;
+  padding: 40px 0;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  .color-icon {
+    color: var(--ktb-solid-krungthai-blue);
+  }
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
