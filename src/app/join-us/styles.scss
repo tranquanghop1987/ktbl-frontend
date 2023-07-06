@@ -1,0 +1,13 @@
+.join-us {
+  margin-top: 66px;
+  .banner-join {
+    background-image: url('/assets/images/join-us/career-teaser-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh - 66px);
+  }
+  h1 {
+    font-size: 3rem;
+  }
+}

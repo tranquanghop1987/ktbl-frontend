@@ -1,9 +1,9 @@
 'use client';
-import { Breadcrumb } from 'antd';
 import styles from './styles.module.css';
 import PrimaryButton from '../Button';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
+import Breadcrumb from '@/app/shared/widgets/Breadcrumb';
 
 function ProductBaner() {
   const { ref, inView } = useInView({
@@ -37,17 +37,7 @@ function ProductBaner() {
       <div className={styles.bnProduct}>
         <div className={`${styles.block} relative`}>
           <div>
-            <Breadcrumb
-              className={styles.breadcrumb}
-              items={[
-                {
-                  title: 'หน้าแรก',
-                },
-                {
-                  title: 'รถกระบะและรถยนต์นั่ง 4 ล้อทุกประเภท',
-                },
-              ]}
-            />
+            <Breadcrumb items={[{ text: `รถกระบะและรถยนต์นั่ง 4 ล้อทุกประเภท`, link: `/products` }]}></Breadcrumb>
           </div>
           <div className={styles.header}>บริการเช่าแบบลีสซิ่ง</div>
           <div>
@@ -141,4 +131,5 @@ function ProductBaner() {
     </div>
   );
 }
+
 export default ProductBaner;

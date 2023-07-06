@@ -1,0 +1,30 @@
+.panel {
+  .panel-item h3 {
+    border-bottom: 1px solid #e1e1e1;
+    padding: 8px 12px;
+    position: relative;
+    color: #484848;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .content {
+    display: none;
+  }
+  .active {
+    display: block;
+    height: 40px;
+  }
+  .active:checked + .content {
+    display: block;
+  }
+  h3:after {
+    content: '\002B';
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    bottom: 4px;
+  }
+  .panel-item:has(> .active:checked) h3:after {
+    transform: rotate(135deg);
+  }
+}

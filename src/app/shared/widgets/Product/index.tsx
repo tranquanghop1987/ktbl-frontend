@@ -23,14 +23,22 @@ const HomeProduct = () => {
       description: 'รถบรรทุกใหม่ รถบรรทุกใช้แล้ว  Sales and Hire Purchase Back / Refinance',
       idProduct: '1',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
-      backgroudLink: '/assets/images/banner-bg.png',
+      backgroudLink: '/assets/images/product/bg_1.png',
+      imaggleft: '/assets/images/product/right_1.png',
+      imageRight: '/assets/images/product/left_1.png',
+      stylesLeft: { transform: 'translate(-12%, -24%)' },
+      stylesRight: { display: 'none' },
     },
     {
       title: 'สินเชื่อเช่าซื้อเครื่องจักร',
       description: 'รเครื่องจักรใหม เครื่องจักรใช้แล้ว  Sales and Hire Purchase Back / Refinance',
       idProduct: '2',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
-      backgroudLink: '/assets/images/product-bg.png',
+      backgroudLink: '/assets/images/product/bg_2.png',
+      imaggleft: '/assets/images/product/left_2.png',
+      imageRight: '/assets/images/product/right_2.png',
+      stylesLeft: { transform: 'translate(-27%, -52%)' },
+      stylesRight: { transform: 'translate(21%, -65%)' },
     },
     {
       title: ' สินเชื่อเช่าซื้อรถกระบะ และรถยนต์นั่ง 4 ล้อ ทุกประเภท',
@@ -39,13 +47,19 @@ const HomeProduct = () => {
       idProduct: '3',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
       backgroudLink: '/assets/images/product-bg.png',
+      imaggleft: '/assets/images/product-info-car-1.png',
+      imageRight: '/assets/images/product-info-car-2.png',
     },
     {
       title: 'สินเชื่อ KTC พี่เบิ้ม รถยนต์มือสอง',
       description: 'อนุมัติไว รับรถทันใจ ไม่ต้องมีผู้ค้ำ',
       idProduct: '4',
       titleBtn: 'รายละเอียดผลิตภัณฑ์',
-      backgroudLink: '/assets/images/banner-bg.png',
+      backgroudLink: '/assets/images/product/bg_4.png',
+      imaggleft: '/assets/images/product/left_4.png',
+      imageRight: '/assets/images/product/right_4.png',
+      stylesLeft: { transform: 'translate(-25%, -35%)' },
+      stylesRight: { transform: 'translate(20%, -52%)' },
     },
   ];
   const handleActive = (key: string, pageNum: number) => () => {
@@ -66,14 +80,14 @@ const HomeProduct = () => {
       <div
         className={styles.hproduct + ` w-full ${inView ? ` ${styles.animation}` : ` ${styles.animationOut}`}`}
         ref={ref}
-        // style={{ backgroundImage: `url('${productDetail[page].backgroudLink}')`, transition: 'ease 0.2' }}
+        style={{ backgroundImage: `url('${productDetail[page].backgroudLink}')`, transition: 'ease 0.2' }}
         id="product"
       >
-        <div className={styles.carLeft}>
-          <img src="/assets/images/product-info-car-1.png" alt="" />
+        <div className={styles.carLeft} style={productDetail[page].stylesLeft}>
+          <img src={productDetail[page].imaggleft} alt="" />
         </div>
-        <div className={styles.carRight}>
-          <img src="/assets/images/product-info-car-2.png" alt="" />
+        <div className={styles.carRight} style={productDetail[page].stylesRight}>
+          <img src={productDetail[page].imageRight} alt="" />
         </div>
         <div className={styles.productInfoTitle + ` flex-column align-center`}>
           <div className={styles.productTitle}>ผลิตภัณฑ์สินเชื่อ</div>

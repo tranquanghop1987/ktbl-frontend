@@ -1,10 +1,7 @@
-'use client';
-import { CloseOutlined, PlusOutlined } from '@ant-design/icons';
-import { Collapse, CollapseProps } from 'antd';
 import styles from './styles.module.scss';
-import type { CSSProperties } from 'react';
+import Panel, { ItemProps } from '../Panel';
 
-const listItemFAQ: (panelStyle: CSSProperties) => CollapseProps['items'] = (panelStyle) => [
+const listItemFAQ: Array<ItemProps> = [
   {
     key: 1,
     label: 'หากต้องการแจ้งเปลี่ยนที่อยู่ในการจัดส่งเอกสารจะต้องดำเนินการอย่างไร ?',
@@ -16,7 +13,6 @@ const listItemFAQ: (panelStyle: CSSProperties) => CollapseProps['items'] = (pane
         เขตวัฒนา กรุงเทพฯ 10110 หรือส่งเข้ามาทางอีเมลล์ info_ktbleasing@ktbleasing.co.th
       </p>
     ),
-    style: panelStyle,
   },
   {
     key: 2,
@@ -29,7 +25,6 @@ const listItemFAQ: (panelStyle: CSSProperties) => CollapseProps['items'] = (pane
         เขตวัฒนา กรุงเทพฯ 10110 หรือส่งเข้ามาทางอีเมลล์ info_ktbleasing@ktbleasing.co.th
       </p>
     ),
-    style: panelStyle,
   },
   {
     key: 3,
@@ -42,7 +37,6 @@ const listItemFAQ: (panelStyle: CSSProperties) => CollapseProps['items'] = (pane
         เขตวัฒนา กรุงเทพฯ 10110 หรือส่งเข้ามาทางอีเมลล์ info_ktbleasing@ktbleasing.co.th
       </p>
     ),
-    style: panelStyle,
   },
   {
     key: 4,
@@ -55,35 +49,15 @@ const listItemFAQ: (panelStyle: CSSProperties) => CollapseProps['items'] = (pane
         เขตวัฒนา กรุงเทพฯ 10110 หรือส่งเข้ามาทางอีเมลล์ info_ktbleasing@ktbleasing.co.th
       </p>
     ),
-    style: panelStyle,
   },
 ];
 
 const ProductFAQ = () => {
-  const panelStyle = {
-    marginBottom: 24,
-  };
   return (
     <div className={styles.faq + ' container mx-auto'}>
       <h2 className={`${styles.headerFQA}`}>คำถามที่พบบ่อย</h2>
-      <Collapse
-        collapsible="icon"
-        defaultActiveKey={['1']}
-        expandIcon={({ isActive }) =>
-          isActive ? <CloseOutlined style={{ color: '#0B7199' }} /> : <PlusOutlined style={{ color: '#0B7199' }} />
-        }
-        expandIconPosition="end"
-        items={listItemFAQ(panelStyle)}
-        bordered={false}
-        style={{ background: '#ffffff' }}
-      />
+      <Panel items={listItemFAQ} />
     </div>
-    // <div>
-    //   <Collapse
-    //     size="large"
-    //     items={[{ key: '1', label: 'This is large size panel header', children: <p>Describe</p> }]}
-    //   />
-    // </div>
   );
 };
 

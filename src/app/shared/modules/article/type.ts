@@ -15,5 +15,4 @@ export interface IArticle {
   featureImageUrl: string;
   content: string;
   author: string;
-
 }

@@ -1,6 +1,6 @@
-import Navbar from "@/app/shared/widgets/Navbar";
-import styles from "./styles.module.scss";
-import ArticleCardList from "@/app/shared/widgets/ArticleCardList";
+import Navbar from '@/app/shared/widgets/Navbar';
+import styles from './styles.module.scss';
+import ArticleCardList from '@/app/shared/widgets/ArticleCardList';
 
 const NewDetail = ({ params }: { params: { slug: string } }) => {
   console.log(params); // load news detail from params
@@ -38,18 +38,28 @@ const NewDetail = ({ params }: { params: { slug: string } }) => {
     content,
     title: `รองนายกรัฐมนตรี เยี่ยมชมบูธ “กรุงไทย” ในงานมหกรรมสมุนไพรแห่งชาติ ครั้งที่ 20`,
     createDate: `อัพเดทวันที่ 28 มิ.ย. 2566`,
-    type: 'news'
-  }
+    type: 'news',
+  };
   return (
     <>
       <Navbar isHome={false}></Navbar>
       <div className={styles.newsWrapper}>
         <div className={styles.block1}>
-          <button className={`px-2 py-2 w-10 h-10 font-semibold text-sm bg-cyan-500 text-white rounded-full shadow-sm absolute left-0 ${styles.backbtn}`}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                 className="bi bi-chevron-left inline" viewBox="0 0 16 16">
-              <path fillRule="evenodd"
-                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+          <button
+            className={`px-2 py-2 w-10 h-10 font-semibold text-sm bg-cyan-500 text-white rounded-full shadow-sm absolute left-0 ${styles.backbtn}`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-chevron-left inline"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fillRule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+              />
             </svg>
           </button>
           <h1>ข่าวและประกาศ</h1>
@@ -59,8 +69,9 @@ const NewDetail = ({ params }: { params: { slug: string } }) => {
             <h1 className={styles.newTitle}>{news.title}</h1>
             <p className={styles.createDate}>{news.createDate}</p>
             <div>
-              <span
-                className="bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">{news.type}</span>
+              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
+                {news.type}
+              </span>
             </div>
             <div className={styles.contentWraper}>
               <img src="https://krungthai.com/ktb/imgUpload/news/20230628_anithin-W700-2.jpg" alt="" />

@@ -1,7 +1,7 @@
 import { getBackendSeoMedia } from '@/lib/api-helper';
 import Image from 'next/image';
 import { formatDate } from '@/app/shared/utils/date';
-import {articleRenderer} from "@/app/shared/utils/article-renderer";
+import { articleRenderer } from '@/app/shared/utils/article-renderer';
 
 interface Article {
   id: number;

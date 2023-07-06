@@ -5,6 +5,7 @@ import { TextField } from '@mui/material';
 import Select from '../Select';
 import './style.css';
 import PrimaryButton from '../Button';
+import { FORM_SELECT } from '../../modules/global';
 const ProductForm = () => {
   return (
     <div className="container mx-auto py-10  text-center">
@@ -20,19 +21,19 @@ const ProductForm = () => {
           <TextField id="outlined-basic" label="ชื่อบริษัท / ชื่อผู้สมัคร" variant="outlined" fullWidth />
         </div>
         <div>
-          <Select label="ประเภทธุรกิจ" />
+          <Select label="ประเภทธุรกิจ" typeValue="text" options={FORM_SELECT.businessProduct} />
         </div>
         <div>
-          <Select label="จังหวัด" />
+          <Select label="จังหวัด" typeValue="text" options={FORM_SELECT.province} />
         </div>
         <div>
           <Select label="เขต / อำเภอ" />
         </div>
         <div>
-          <Select label="ประเภทรถที่ต้องการ" />
+          <Select label="ประเภทรถที่ต้องการ" typeValue="text" options={FORM_SELECT.PreferredCarType} />
         </div>
         <div>
-          <Select label="ระยะเวลาที่ต้องการเช่า" />
+          <Select label="ระยะเวลาที่ต้องการเช่า" typeValue="text" options={FORM_SELECT.LengthTime} />
         </div>
       </div>
       <div className="mx-auto my-4">

@@ -16,6 +16,7 @@ interface Article {
     cover: any;
     category: any;
     authorsBio: any;
+    type: string;
   };
 }
 
@@ -32,7 +33,7 @@ const PostList = ({ data: articles, children }: { data: Article[]; children?: Re
           return (
             <div
               key={article.id}
-              className={`${styles.itemArticles}  g h-56 w-full  mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 rounded-2xl  shadow-lg `}
+              className={`${styles.itemArticles}  g h-56 w-full  mx-auto group hover:no-underline focus:no-underline rounded-2xl  shadow-lg `}
             >
               <div className="relative">
                 {avatarUrl && (
@@ -47,7 +48,9 @@ const PostList = ({ data: articles, children }: { data: Article[]; children?: Re
               </div>
               <div className="p-3 overflow-hidden">
                 <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline text-sky-600">
-                  <Link href={`articles/news/${article.attributes.slug}`}>{article.attributes.title}</Link>
+                  <Link href={`/articles/${article.attributes.type}/${article.attributes.slug}`}>
+                    {article.attributes.title}
+                  </Link>
                 </h3>
 
                 <div className="flex justify-between items-center">

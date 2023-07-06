@@ -34,7 +34,17 @@ const listArt = (articles: any) => {
 /**
  *  Section UI
  */
-const ArticleCardList = ({ articleType, headTitle, hideTitle, hideSeeAll }: { articleType: string; headTitle?: string, hideTitle?: boolean, hideSeeAll?: boolean }) => {
+const ArticleCardList = ({
+  articleType,
+  headTitle,
+  hideTitle,
+  hideSeeAll,
+}: {
+  articleType: string;
+  headTitle?: string;
+  hideTitle?: boolean;
+  hideSeeAll?: boolean;
+}) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
     rootMargin: '-100px 0px',
@@ -59,14 +69,12 @@ const ArticleCardList = ({ articleType, headTitle, hideTitle, hideSeeAll }: { ar
       className={`container mx-auto ${styles.article} ${inView ? ` ${styles.animation}` : ` ${styles.animationOut}`}`}
     >
       <div className={styles.header}>
-        {
-          hideTitle ? null : <div className={styles.title}>{headTitle}</div>
-        }
-        {
-          hideSeeAll ? null : <Link href={'/#'} style={{ color: '#0080BD', border: 'none' }}>
+        {hideTitle ? null : <div className={styles.title}>{headTitle}</div>}
+        {hideSeeAll ? null : (
+          <Link href={`articles/${articleType}`} style={{ color: '#0080BD', border: 'none' }}>
             ดูทั้งหมด
           </Link>
-        }
+        )}
       </div>
       <div className={`visible sm:hidden md:hidden lg:hidden xl:hidden`}>
         <Slider {...settings}>{listArt(articles)}</Slider>

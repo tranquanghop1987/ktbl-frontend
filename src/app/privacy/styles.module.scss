@@ -1,5 +1,9 @@
 .wrapper {
   padding-top: 140px;
+  min-height: 700px;
+
+  background: url("/assets/images/privacy-bg.jpg") no-repeat center;
+  background-size: cover;
 
   .mainContent {
     @apply container mx-auto;
@@ -14,7 +18,13 @@
     .list {
       margin-top: 2rem;
       padding-left: 1rem;
+      li {
+        margin-top: 1rem;
+      }
       .link {
+        img {
+          margin-right: 5px;
+        }
         display: flex;
         align-items: center;
       }

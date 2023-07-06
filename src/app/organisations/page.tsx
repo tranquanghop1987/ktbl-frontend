@@ -63,7 +63,7 @@ const OrganisationChart = () => {
               </li>
               <li>
                 <h3 className={`${styles.level3} ${styles.rectangle}`}>
-                  ฝ่ายกลั่นกรองสินเชื่อ และอนุมัติสินเชื่อรายย่อย '
+                  ฝ่ายกลั่นกรองสินเชื่อ และอนุมัติสินเชื่อรายย่อย
                 </h3>
               </li>
               <li>

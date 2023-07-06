@@ -115,7 +115,8 @@
   padding: 8px 24px 16px 24px;
   border-radius: 0 0 8px 8px;
   list-style: none;
-  width: 260px;
+  white-space: nowrap;
+  width: fit-content;
   top: 1.5rem;
 }
 
