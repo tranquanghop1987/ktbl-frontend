@@ -11,11 +11,13 @@ const Breadcrumb = ({ items }: { items: { text: string; link?: string }[] }) => 
           </Link>
           {items.map((item) => {
             return item.link ? (
-              <Link href={item.link} className={styles.textCrumb}>
+              <Link href={item.link} key={item.link} className={styles.textCrumb}>
                 <span className={styles.textCrumb}> / {item.text}</span>
               </Link>
             ) : (
-              <span className={styles.textCrumb}> / {item.text}</span>
+              <span className={styles.textCrumb} key={item.text}>
+                / {item.text}
+              </span>
             );
           })}
         </span>

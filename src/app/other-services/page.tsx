@@ -1,11 +1,10 @@
 'use client';
 import './styles.scss';
-// import { TabsProps } from '../shared/widgets/Tabs';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import React from 'react';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import '../../app/assets/css/slick.css';
+import '../../app/assets/css/slick-theme.css';
 
 const Individual = (): React.ReactNode => {
   return (

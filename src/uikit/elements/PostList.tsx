@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { getBackendSeoMedia } from '@/lib/api-helper';
 import { formatDate } from '@/app/shared/utils/date';
@@ -17,6 +16,7 @@ interface Article {
     category: any;
     authorsBio: any;
     type: string;
+    feature_image: { data: any };
   };
 }
 
@@ -25,11 +25,7 @@ const PostList = ({ data: articles, children }: { data: Article[]; children?: Re
     <section className="container p-6 mx-auto space-y-6 sm:space-y-12">
       <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2">
         {articles.map((article) => {
-          // const imageUrl = getBackendSeoMedia(article.attributes.cover?.data?.attributes.url);
-
-          const authorsBio = article.attributes.authorsBio?.data?.attributes;
-          const avatarUrl = getBackendSeoMedia(authorsBio?.avatar.data.attributes.url);
-
+          const avatarUrl = getBackendSeoMedia(article.attributes.feature_image.data?.attributes?.url ?? '');
           return (
             <div
               key={article.id}
@@ -37,9 +33,8 @@ const PostList = ({ data: articles, children }: { data: Article[]; children?: Re
             >
               <div className="relative">
                 {avatarUrl && (
-                  <Image
+                  <img
                     alt="avatar"
-                    fill
                     src={avatarUrl}
                     className="w-full h-full rounded-lg"
                     style={{ aspectRatio: 4 / 3 }}
