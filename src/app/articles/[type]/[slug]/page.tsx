@@ -20,7 +20,6 @@ function renderMarkdownToHTML(markdown: any) {
 }
 
 const NewDetail = async ({ params }: { params: { type: string; slug: string } }) => {
-
   const articles = await getArticles({ slug: params.slug }, 0, 1);
   let news: any = {};
   let markup: any = '';
@@ -40,7 +39,7 @@ const NewDetail = async ({ params }: { params: { type: string; slug: string } })
           <Breadcrumb
             items={[
               { text: params.type == 'news' ? 'ข่าวประชาสัมพันธ์' : 'บทความ', link: `/articles/${params.type}` },
-              { text: `${news.attributes.title}` }
+              { text: `${news.attributes.title}` },
             ]}
           ></Breadcrumb>
         </div>
@@ -49,15 +48,17 @@ const NewDetail = async ({ params }: { params: { type: string; slug: string } })
             <h1 className={styles.newTitle}>{news.attributes.title}</h1>
             <p className={styles.createDate}>{news.attributes.createDate}</p>
             <div>
-              <span
-                className="bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
+              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
                 {news.attributes.tag}
               </span>
             </div>
             <div className={styles.contentWraper}>
               <div className={styles.imgWrapper}>
-                <Image src={getBackendSeoMedia(news.attributes.feature_image?.data?.attributes?.url) || ''} alt=""
-                       fill />
+                <Image
+                  src={getBackendSeoMedia(news.attributes.feature_image?.data?.attributes?.url) || ''}
+                  alt=""
+                  fill
+                />
               </div>
               <p className={styles.content} dangerouslySetInnerHTML={markup}></p>
             </div>
@@ -67,7 +68,12 @@ const NewDetail = async ({ params }: { params: { type: string; slug: string } })
           <div className={styles.wrapper}>
             <div className={styles.header}>แนะนำสำหรับคุณ</div>
             <div className={styles.slideWraper}>
-              <ArticleCardList articleType={news.attributes.type} hideTitle={true} hideSeeAll={true} articles={relatedArticles} />
+              <ArticleCardList
+                articleType={news.attributes.type}
+                hideTitle={true}
+                hideSeeAll={true}
+                articles={relatedArticles}
+              />
             </div>
           </div>
         </div>

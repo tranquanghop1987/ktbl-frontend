@@ -1,5 +1,4 @@
 import { fetchAPI } from '@/app/shared/utils/fetch-api';
-import { ItemType } from 'antd/es/menu/hooks/useItems';
 
 /**
  * get all remote variable from server
@@ -21,7 +20,7 @@ export const getGlobal = async (): Promise<any> => {
 };
 
 // TODO: hardcode, should get from api
-export const items: ItemType[] = [
+export const items = [
   {
     label: 'เกี่ยวกับบริษัท',
     key: 'mail',
@@ -57,6 +56,7 @@ export const items: ItemType[] = [
       {
         label: 'ร่วมงานกับเรา',
         key: '8',
+        link: '/join-us',
       },
     ],
   },
@@ -67,22 +67,27 @@ export const items: ItemType[] = [
       {
         label: 'สินเชื่อรถบรรทุก รถหัวลาก และอุปกรณ์ต่อพ่วง',
         key: '1',
+        link: '/products/1',
       },
       {
         label: 'สินเชื่อเครื่องจักรก่อสร้าง (ที่จดทะเบียนกรมการขนส่ง)',
         key: '2',
+        link: '/products/2',
       },
       {
         label: 'สินเชื่อรถกระบะ และรถยนต์นั่ง 4 ล้อ ทุกประเภท',
         key: '3',
+        link: '/products/3',
       },
       {
         label: 'สินเชื่อรถมือสอง KTC พี่เบิ้ม',
         key: '4',
+        link: '/products/4',
       },
       {
         label: 'สินเชื่อรถแลกเงิน KTC พี่เบิ้ม',
         key: '5',
+        link: '/products/5',
       },
     ],
   },
@@ -97,10 +102,12 @@ export const items: ItemType[] = [
       {
         label: 'บริการด้านอื่นๆ',
         key: '2',
+        link: '/other-services',
       },
       {
         label: 'โปรโมชั่น',
         key: '3',
+        link: '/promotion',
       },
       {
         label: 'ช่องทางการชำระเงิน',
@@ -129,6 +136,7 @@ export const items: ItemType[] = [
   {
     label: 'ติดต่อเรา',
     key: 'alipay4',
+    link: '/about-us',
     // children: [
     //   { label: '02 407 1555', key: '1' },
     //   { label: '@KTBLEASING.CO.TH', key: '2' },

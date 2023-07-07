@@ -20,7 +20,6 @@ export default function Profile({ params }: { params: { type: string } }) {
   const [isLoading, setLoading] = useState(true);
   const PAGE_LIMIT = 6;
 
-
   const fetchData = useCallback(async (type: any, start: number, limit: number) => {
     setLoading(true);
     try {

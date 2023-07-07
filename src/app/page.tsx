@@ -5,7 +5,7 @@ import ScrollDown from '@/app/shared/widgets/ScrollDown';
 import OurServices from '@/app/shared/widgets/Services';
 import Vision from '@/app/shared/widgets/Vision';
 import { useInView } from 'react-intersection-observer';
-import { useFindArticles } from "@/app/shared/modules/article/usecase";
+import { useFindArticles } from '@/app/shared/modules/article/usecase';
 
 const Home = () => {
   const { ref, inView } = useInView({
@@ -14,7 +14,7 @@ const Home = () => {
   });
 
   const ARTICLE_LIMIT = 4;
-  const { articles: news  } = useFindArticles('news', ARTICLE_LIMIT);
+  const { articles: news } = useFindArticles('news', ARTICLE_LIMIT);
   const { articles: presses } = useFindArticles('press', ARTICLE_LIMIT);
 
   return (
@@ -27,7 +27,7 @@ const Home = () => {
       <OurServices />
       <Vision />
       <ArticleCardList articleType="news" headTitle={'ข่าวประชาสัมพันธ์'} articles={news} />
-      <ArticleCardList articleType="press" headTitle={`บทความ`} articles={presses}/>
+      <ArticleCardList articleType="press" headTitle={`บทความ`} articles={presses} />
     </main>
   );
 };

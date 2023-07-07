@@ -27,7 +27,12 @@ const PaymentPage = () => {
                 <h1 className={'text-3xl font-extrabold underline mb-3 color-primary'}>Money from Saving Account</h1>
               </div>
               <div className={styles.imageContainer}>
-                <Image width={250} height={250} alt={'banner'} src={'/assets/images/payment-method/saving-account.jpg'} />
+                <Image
+                  width={250}
+                  height={250}
+                  alt={'banner'}
+                  src={'/assets/images/payment-method/saving-account.jpg'}
+                />
               </div>
             </div>
           </section>
@@ -60,7 +65,12 @@ const PaymentPage = () => {
                 </ul>
               </div>
               <div className={styles.imageContainer}>
-                <Image width={250} height={250} alt={'banner'} src={'/assets/images/payment-method/payment-point.jpg'} />
+                <Image
+                  width={250}
+                  height={250}
+                  alt={'banner'}
+                  src={'/assets/images/payment-method/payment-point.jpg'}
+                />
               </div>
             </div>
           </section>

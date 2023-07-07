@@ -17,9 +17,10 @@ export const renderMenu = ({
         {menus?.map((item, index) => {
           return (
             <li key={index} className={isFirst ? 'menu-item  dropdown relative' : ' menu-item'}>
-              <Link href={''} className={isFirst ? 'nav__link ' : 'sub-nav__link'}>
+              <Link href={item?.link ?? ''} className={isFirst ? 'nav__link ' : 'sub-nav__link'}>
                 {item?.label}
               </Link>
+              {isFirst ? <img className="icon_image" src="/assets/icons/ep_arrow-down.svg" alt="" /> : null}
               {item?.children ? renderMenu({ menus: item.children, isFirst: false }) : null}
             </li>
           );

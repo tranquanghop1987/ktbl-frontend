@@ -4,13 +4,11 @@
 
 @import 'variables.module.scss';
 
-
 //theme
 // import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 // //core
 // import "primereact/resources/primereact.min.css";
-
 
 @font-face {
   font-family: 'Krungthai Fast';
@@ -229,7 +227,7 @@ ul li {
     opacity: 1;
   }
 }
-.scroll-down a {
+.scroll-down span {
   text-decoration: none;
   color: #ffffff;
 }
@@ -325,9 +323,9 @@ input:not(:placeholder-shown) + .label-float {
 }
 
 select.camil {
-  background: url('/assets/images/icon-arrow-dd-gray.png') 94% no-repeat rgba(0,0,0,.2)!important;
-  background-size: 17px!important;
-  color: #FFF;
+  background: url('/assets/images/icon-arrow-dd-gray.png') 94% no-repeat rgba(0, 0, 0, 0.2) !important;
+  background-size: 17px !important;
+  color: #fff;
   border: none;
   font-size: 18px;
   height: 50px;
@@ -341,7 +339,6 @@ select.camil {
 
   &:focus {
     outline: none;
-
   }
 }
 

@@ -10,12 +10,16 @@ import { useInView } from 'react-intersection-observer';
 import Slider from 'react-slick';
 
 const listArt = (articles: any) => {
-  return articles.map((press: any, index: any) => {
+  return articles?.map((press: any, index: any) => {
     const seoImgUrl = getBackendSeoMedia(press.attributes.feature_image?.data?.attributes?.url);
     const humanCreatedDate = formatDate(press.attributes.publishedAt);
 
     return (
-      <Link className={styles.newDetail} key={index} href={`/articles/${press.attributes.type}/${press.attributes.slug}`}>
+      <Link
+        className={styles.newDetail}
+        key={index}
+        href={`/articles/${press.attributes.type}/${press.attributes.slug}`}
+      >
         <CardItem
           class={'items'}
           imageUrl={seoImgUrl}

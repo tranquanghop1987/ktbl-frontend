@@ -22,7 +22,7 @@ const nextConfig = {
         pathname: '/uploads/**',
       },
     ],
-    domains: ['strapi-backend-demo-84315734ec99.herokuapp.com', 'localhost'],
+    domains: ['34.87.140.83', 'localhost'],
   },
 };
 
