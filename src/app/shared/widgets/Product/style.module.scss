@@ -1,5 +1,5 @@
 .hproduct {
-  background-image: url('/assets/images/product-bg.png');
+  // background-image: url('/assets/images/product-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -28,16 +28,16 @@
   transform: translate(0, -27%);
 }
 @media screen and (max-width: 768px) {
-  .hproduct {
-    background-image: url('/assets/images/Product_section_mobile.png');
-  }
+  // .hproduct {
+  //   background-image: url('/assets/images/Product_section_mobile.png');
+  // }
   .productList {
     flex-direction: column !important;
     // flex-wrap: wrap;
   }
   .carLeft,
   .carRight {
-    display: none;
+    display: none !important;
   }
 }
 @keyframes carLeftIn {

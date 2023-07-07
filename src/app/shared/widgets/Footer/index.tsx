@@ -3,12 +3,14 @@ import Link from 'next/link';
 import ActiveCSS from '@/uikit/atoms/ActiveCss';
 
 const Footer = ({
-  telephone,
-  address,
-  facebook_page,
-  copyright,
+  telephone = '02 407 1555',
+  address = `591 อาคารสมัชชาวานิช 2 (UBCII) ชั้น 2
+  ถนนสุขุมวิท แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพฯ
+  10110`,
+  facebook_page = '@KTBL',
+  copyright = '© 2566 บริษัท กรุงไทยธุรกิจลีสซิ่ง จำกัด (มหาชน)',
 }: {
-  telephone: string;
+  telephone?: string;
   address?: string;
   facebook_page?: string;
   copyright?: string;

@@ -16,6 +16,11 @@ const nextConfig = {
         port: '1337',
         pathname: '/uploads/**',
       },
+      {
+        protocol: 'http',
+        hostname: '34.87.140.83',
+        pathname: '/uploads/**',
+      },
     ],
     domains: ['strapi-backend-demo-84315734ec99.herokuapp.com', 'localhost'],
   },

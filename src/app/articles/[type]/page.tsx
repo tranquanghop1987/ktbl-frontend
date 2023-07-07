@@ -20,7 +20,8 @@ export default function Profile({ params }: { params: { type: string } }) {
   const [isLoading, setLoading] = useState(true);
   const PAGE_LIMIT = 6;
 
-  const fetchData = useCallback(async (start: number, limit: number) => {
+
+  const fetchData = useCallback(async (type: any, start: number, limit: number) => {
     setLoading(true);
     try {
       const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
@@ -32,12 +33,15 @@ export default function Profile({ params }: { params: { type: string } }) {
           start: start,
           limit: limit,
         },
+        filters: {
+          type: type,
+        },
       };
       const options = { headers: { Authorization: `Bearer ${token}` } };
       const responseData = await fetchAPI(path, urlParamsObject, options);
 
       if (start === 0) {
-        setData(responseData.data);
+        setData(responseData.data ?? []);
       } else {
         setData((prevData: any[]) => [...prevData, ...responseData.data]);
       }
@@ -52,11 +56,11 @@ export default function Profile({ params }: { params: { type: string } }) {
 
   function loadMorePosts(): void {
     const nextPosts = meta!.pagination.start + meta!.pagination.limit;
-    fetchData(nextPosts, Number(PAGE_LIMIT));
+    fetchData(params.type, nextPosts, Number(PAGE_LIMIT));
   }
 
   useEffect(() => {
-    fetchData(0, Number(PAGE_LIMIT));
+    fetchData(params.type, 0, Number(PAGE_LIMIT));
   }, [fetchData]);
 
   if (isLoading) return <Loader />;

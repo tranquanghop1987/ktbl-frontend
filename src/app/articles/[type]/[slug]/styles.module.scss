@@ -29,8 +29,24 @@
       }
       .contentWraper {
         padding-top: 32px;
-        img {
+        .imgWrapper {
           @apply mx-auto;
+          @media (max-width: 576px) {
+            width: 90%;
+          }
+          @media (min-width: 577px) {
+            width: 50%;
+          }
+          @media (min-width: 1280px) {
+            width: 40%;
+          }
+
+          position: relative;
+          img {
+            width: 100% !important;
+            height: auto !important;
+            position: relative !important;
+          }
         }
         .content {
           color: #043d5d;

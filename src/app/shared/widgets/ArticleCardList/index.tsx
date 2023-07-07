@@ -3,14 +3,11 @@ import CardItem from '@/uikit/atoms/CardItem';
 import styles from './styles.module.scss';
 import '../../../assets/css/slick.css';
 import '../../../assets/css/slick-theme.css';
-import Loader from '@/uikit/atoms/Loader';
 import { getBackendSeoMedia } from '@/lib/api-helper';
 import { formatDate } from '@/app/shared/utils/date';
-import { useFindArticles } from '@/app/shared/modules/article/usecase';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
 import Slider from 'react-slick';
-//import {itemList} from "@/app/shared/modules/article/mock";
 
 const listArt = (articles: any) => {
   return articles.map((press: any, index: any) => {
@@ -18,7 +15,7 @@ const listArt = (articles: any) => {
     const humanCreatedDate = formatDate(press.attributes.publishedAt);
 
     return (
-      <div className={styles.newDetail} key={index}>
+      <Link className={styles.newDetail} key={index} href={`/articles/${press.attributes.type}/${press.attributes.slug}`}>
         <CardItem
           class={'items'}
           imageUrl={seoImgUrl}
@@ -26,7 +23,7 @@ const listArt = (articles: any) => {
           description={press.attributes.description}
           createDate={humanCreatedDate}
         />
-      </div>
+      </Link>
     );
   });
 };
@@ -36,11 +33,13 @@ const listArt = (articles: any) => {
  */
 const ArticleCardList = ({
   articleType,
+  articles,
   headTitle,
   hideTitle,
   hideSeeAll,
 }: {
   articleType: string;
+  articles: any[];
   headTitle?: string;
   hideTitle?: boolean;
   hideSeeAll?: boolean;
@@ -49,11 +48,6 @@ const ArticleCardList = ({
     triggerOnce: false,
     rootMargin: '-100px 0px',
   });
-
-  const ARTICLE_LIMIT = 4;
-  const { articles, isLoading } = useFindArticles(articleType, ARTICLE_LIMIT);
-
-  if (isLoading) return <Loader />;
 
   const settings = {
     className: 'slideWraper',

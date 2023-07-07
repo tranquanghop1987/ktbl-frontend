@@ -21,6 +21,6 @@ export const fetchAPI = async (path: string, urlParamsObject = {}, options = {})
     const data = await response.json();
     return data;
   } catch (error) {
-    // throw new Error(`Please check if your server is running and you set all the required tokens.`);
+    throw new Error(`Please check if your server is running and you set all the required tokens.`);
   }
 };

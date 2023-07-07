@@ -1,6 +1,5 @@
 import Footer from '@/app/shared/widgets/Footer';
 import './globals.scss';
-import { getGlobal } from '@/app/shared/modules/global';
 import Navbar from './shared/widgets/Navbar';
 
 export const metadata = {
@@ -9,20 +8,12 @@ export const metadata = {
 };
 /* tslint:disable:no-empty */
 async function RootLayout({ children }: { children?: React.ReactNode }) {
-  const global = await getGlobal();
-  //TODO: CREATE A CUSTOM ERROR PAGE
-  if (!global?.data) return null;
-
-  const globalData = global?.data?.attributes;
-  const copyright = globalData?.footerSection?.copyright;
-  const { telephone, facebook_page, address } = globalData;
-
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <Navbar isHome={true} />
         {children}
-        <Footer copyright={copyright} telephone={telephone} facebook_page={facebook_page} address={address} />
+        <Footer />
       </body>
     </html>
   );
