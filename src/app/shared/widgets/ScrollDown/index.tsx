@@ -9,7 +9,7 @@ const ScrollDown = () => {
   return (
     <div className="scroll-down">
       <span onClick={onClick} className="flex flex-column align-center">
-        <ArrowDownOutlined />
+        <ArrowDownOutlined className={`icon`} />
         <span>Scroll down</span>
       </span>
     </div>

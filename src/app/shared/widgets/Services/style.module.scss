@@ -6,10 +6,12 @@
   .title {
     margin-bottom: 24px;
     color: #0b7199;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 24px;
     display: flex;
     justify-content: center;
+    font-style: normal;
+    line-height: 32px;
   }
 
   @media only screen and (max-width: 768px) {

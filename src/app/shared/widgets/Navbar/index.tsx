@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import './styles.css';
+import './styles.scss';
 import { items } from '@/app/shared/modules/global';
 import { renderMenu } from './section/LeftMenu';
 import { usePathname } from 'next/navigation';

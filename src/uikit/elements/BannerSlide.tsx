@@ -1,6 +1,6 @@
 // "use client";
 // import { Slide } from "react-slideshow-image";
-// import "react-slideshow-image/dist/styles.css";
+// import "react-slideshow-image/dist/styles.scss";
 
 // const BannerSlide = () => {
 //     const images = [

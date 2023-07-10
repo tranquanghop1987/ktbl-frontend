@@ -2,6 +2,7 @@
 const path = require('path');
 
 const nextConfig = {
+  optimizeFonts: false,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
@@ -12,17 +13,14 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'http',
-        hostname: 'localhost',
-        port: '1337',
-        pathname: '/uploads/**',
+        hostname: '**',
       },
       {
-        protocol: 'http',
-        hostname: '34.87.140.83',
-        pathname: '/uploads/**',
+        protocol: "https",
+        hostname: "**",
       },
     ],
-    domains: ['34.87.140.83', 'localhost'],
+    domains: ['ktbl-admin-uat.cmcg.work/', 'localhost'],
   },
 };
 

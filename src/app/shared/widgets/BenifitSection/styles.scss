@@ -1,0 +1,47 @@
+.benifit-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: conic-gradient(
+    from 180deg at 19.58% 96.92%,
+    #caff66 0deg,
+    #ffd41f 48.29839289188385deg,
+    #cf3338 121.53940916061401deg,
+    #0080bd 232.49999284744263deg,
+    #00e9e9 296.2500071525574deg,
+    #aaff0a 360deg
+  );
+  height: 698px;
+  .item {
+    h2 {
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 30px;
+      color: #fff;
+    }
+    p {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
+      color: #e1e1e1;
+    }
+  }
+  .box-item {
+    width: 498px;
+    align-items: flex-start;
+  }
+  .box-item + .box-item {
+    margin-top: 20px;
+  }
+  @media screen and (max-width: 768px) {
+    .box-item {
+      width: auto;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  .border-indigo-500 {
+  }
+}

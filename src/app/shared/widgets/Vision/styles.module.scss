@@ -37,16 +37,31 @@
 .content {
   display: flex;
   flex-wrap: nowrap;
-  color: #ffffff;
+  color: #fafafa;
   padding: 16px 0;
   width: 520px;
-  font-weight: 400;
+  /* DB Lim X/Regular/Body small */
   font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
 }
 .btnAboutCompany {
-  border-radius: 16px;
-  border: 1px solid;
+  display: flex;
+  padding: 8px 32px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 15px;
+  border: 1px solid #fff;
   height: 34px;
+  color: var(--other-white-100, #fff);
+  text-align: center;
+  /* 🅷 Krungthai fast/Bold/Capture large */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
 }
 
 .visionBackgroundLeft,

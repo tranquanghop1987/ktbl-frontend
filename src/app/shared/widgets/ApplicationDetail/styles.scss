@@ -1,0 +1,35 @@
+.appplication-detail {
+  background: linear-gradient(0deg, rgba(172, 204, 221, 0.17) 0%, rgba(172, 204, 221, 0.17) 100%), #fff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  .box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    ol {
+      counter-reset: item;
+      padding-inline-start: 1rem;
+    }
+    li {
+      list-style: disc;
+      list-style-position: inside;
+    }
+  }
+  .text-title {
+    padding-bottom: 0.4rem;
+  }
+  .border-indigo {
+    border-bottom: 2px solid var(--ktb-solid-spirit-blue-vivid-03, #0b7199);
+  }
+  h1 {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 768px) {
+    .box {
+      padding: 20px;
+    }
+  }
+}

@@ -20,7 +20,9 @@ export const renderMenu = ({
               <Link href={item?.link ?? ''} className={isFirst ? 'nav__link ' : 'sub-nav__link'}>
                 {item?.label}
               </Link>
-              {isFirst ? <img className="icon_image" src="/assets/icons/ep_arrow-down.svg" alt="" /> : null}
+              {isFirst && item?.children ? (
+                <img className="icon_image" src="/assets/icons/ep_arrow-down.svg" alt="" />
+              ) : null}
               {item?.children ? renderMenu({ menus: item.children, isFirst: false }) : null}
             </li>
           );

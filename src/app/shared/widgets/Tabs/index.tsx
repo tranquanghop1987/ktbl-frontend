@@ -3,7 +3,15 @@
 import React, { useState } from 'react';
 
 export type TabsProps = { key: string; label: string; children?: React.ReactNode };
-const Tab = ({ items = [], defaultActiveKey }: { items: Array<TabsProps>; defaultActiveKey?: string }) => {
+const Tab = ({
+  items = [],
+  defaultActiveKey,
+  className = '',
+}: {
+  items: Array<TabsProps>;
+  defaultActiveKey?: string;
+  className?: string;
+}) => {
   const [active, setActive] = useState(defaultActiveKey);
   const handelClick = (key: string) => () => {
     setActive(key);
@@ -11,14 +19,14 @@ const Tab = ({ items = [], defaultActiveKey }: { items: Array<TabsProps>; defaul
 
   return (
     <>
-      <ul className="flex flex-wrap -mb-px text-sm font-medium text-center">
+      <ul className={`${className} flex flex-wrap -mb-px text-sm font-medium text-center w-full`}>
         {items.map((item) => {
           return (
             <li className="mr-2" key={item.key} onClick={handelClick(item.key)}>
               <button
                 className={
                   active === item.key
-                    ? 'my-2 block border-x-0 border-b-2 border-t-0  px-7 pb-3.5 pt-4  font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate  data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400 border-indigo-500'
+                    ? 'my-2 block border-x-0 border-b-2 border-t-0 text-title p-4 font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate  data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400 border-indigo'
                     : 'inline-block p-4 border-b-2 rounded-t-lg'
                 }
               >

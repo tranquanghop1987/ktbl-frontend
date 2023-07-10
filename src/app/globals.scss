@@ -12,14 +12,20 @@
 
 @font-face {
   font-family: 'Krungthai Fast';
-  src: url('/assets/font/KrungthaiFastWeb-Regular.woff') format('woff'),
-    url('/font/DB Lim X Bd It v3.2.1.ttf') format('truetype'),
-    url('/font/KrungthDB Lim X Bd v3.2.1.woff') format('truetype'),
-    url('/font/DB Lim X It v3.2.1.ttf') format('truetype'), url('/font/DB Lim X Med It v3.2.1.ttf') format('truetype'),
-    url('/font/DB Lim X Med v3.2.1.ttf') format('truetype'), url('/font/DB Lim X v3.2.1.ttf') format('truetype');
+  src: url('/assets/font/KrungthaiFastWeb-Bold.eot');
+  src: url('/assets/font/KrungthaiFastWeb-Bold.eot?#iefix') format("embedded-opentype"),
+  url('/assets/font/KrungthaiFastWeb-Bold.woff') format("woff"),
+  url('/assets/font/KrungthaiFastWeb-Bold.ttf') format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Krungthai Fast';
+  src: url('/assets/font/KrungthaiFastWeb-Regular.eot');
+  src: url('/assets/font/KrungthaiFastWeb-Regular.eot?#iefix') format("embedded-opentype"), url('/assets/font/KrungthaiFastWeb-Regular.woff') format("woff"), url('/assets/font/KrungthaiFastWeb-Regular.ttf') format("truetype");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 
 * {
@@ -66,9 +72,11 @@ body {
 .ant-drawer-body .ant-menu-horizontal > .ant-menu-item:hover {
   border-bottom-color: transparent;
 }
+
 .ant-menu-light > .ant-menu.ant-menu-submenu > .ant-menu {
   background-color: #00a6e6;
 }
+
 .username {
   display: none;
   margin-left: 8px;
@@ -100,9 +108,11 @@ body {
     display: inline-block;
   }
 }
+
 ul li {
   list-style-type: none;
 }
+
 .banner {
   background-image: url('/assets/images/banner-bg.png');
   background-repeat: no-repeat;
@@ -114,11 +124,13 @@ ul li {
   height: 100vh;
   transition: 0.3;
 }
+
 .banner-image {
   width: 100%;
   height: 100%;
   position: relative;
 }
+
 .banner-image img {
   width: 100%;
   height: 100%;
@@ -127,6 +139,7 @@ ul li {
   top: 0;
   left: 0;
 }
+
 .fream1 {
   flex-shrink: 0;
   width: 100%;
@@ -138,28 +151,36 @@ ul li {
   display: flex;
   flex-direction: row;
 }
+
 .flex-column {
   display: flex;
   flex-direction: column;
 }
+
 .align-center {
   align-items: center;
 }
+
 .justify-content-center {
   justify-content: center;
 }
+
 .flex-sb {
   justify-content: space-between;
 }
+
 .mt-8 {
   margin-top: 8px;
 }
+
 .mt-64 {
   margin-top: 64px;
 }
+
 .align-baseline {
   align-items: baseline;
 }
+
 .scroll-down {
   font-weight: 300;
   font-size: 16px;
@@ -172,7 +193,14 @@ ul li {
   transform: translate(-50%, 0px);
   opacity: 1;
   z-index: 10;
+
+  &:hover {
+    .icon {
+      @apply animate-bounce;
+    }
+  }
 }
+
 /* .banner:hover .scroll-down {
   animation: totop 1s;
 }
@@ -182,6 +210,7 @@ ul li {
 .banner-animation .scroll-down {
   bottom: 36px;
 }
+
 .banner-animationOut .scroll-down {
   opacity: 0;
 }
@@ -189,6 +218,7 @@ ul li {
 .banner-animation .scroll-down {
   animation: totop 1s;
 }
+
 .banner-animation {
   opacity: 1;
   animation: bannerShow 2s;
@@ -198,23 +228,27 @@ ul li {
 .banner-animationOut .scroll-down {
   animation: todown 3s;
 }
+
 .banner-animationOut .banner-image {
   opacity: 0;
   transition: 0.2;
   animation: bannerNotShow 3s;
 }
+
 @keyframes totop {
   from {
     transform: translate(-50%, 70px);
     opacity: 0;
   }
 }
+
 @keyframes todown {
   to {
     transform: translate(-50%, 0px);
     opacity: 0;
   }
 }
+
 @keyframes bannerShow {
   from {
     background-image: url('/assets/images/banner-bg.png');
@@ -222,15 +256,18 @@ ul li {
     opacity: 1;
   }
 }
+
 @keyframes bannerNotShow {
   from {
     opacity: 1;
   }
 }
+
 .scroll-down span {
   text-decoration: none;
   color: #ffffff;
 }
+
 .each-slide-effect > div {
   display: flex;
   align-items: center;
@@ -245,9 +282,11 @@ ul li {
   background: #efefef;
   text-align: center;
 }
+
 .gap-20 {
   gap: 20px;
 }
+
 .gap-8 {
   gap: 8px;
 }
@@ -264,6 +303,7 @@ ul li {
     display: none;
   }
 }
+
 .navbar .ant-layout-header {
   /* background-color: transparent; */
 }
@@ -271,9 +311,11 @@ ul li {
 .mr-18 {
   margin-right: 18px;
 }
+
 .mt-4 {
   margin-top: 4px;
 }
+
 .float-label {
   position: relative;
   margin-bottom: 12px;
@@ -289,6 +331,7 @@ ul li {
   transform: translate(0, -50%);
   transition: 0.2s ease all;
 }
+
 input:not(:placeholder-shown) + .label-float {
   top: -10px;
   font-size: 10px;
@@ -317,6 +360,7 @@ input:not(:placeholder-shown) + .label-float {
     padding: 0px !important;
     height: 100% !important;
   }
+
   .slick-slide {
     padding: 10px 8px;
   }
@@ -345,8 +389,24 @@ select.camil {
 .block-icon {
   display: flex;
   align-items: center;
+
   .icon {
     margin-right: 5px;
     height: fit-content;
   }
+}
+
+.text-title {
+  color: #262626;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+.text-content {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  color: #484848;
 }

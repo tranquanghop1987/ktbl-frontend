@@ -1,6 +1,13 @@
 import Footer from '@/app/shared/widgets/Footer';
 import './globals.scss';
 import Navbar from './shared/widgets/Navbar';
+import localFont from 'next/font/local';
+
+const myFont = localFont({
+  src: '../../public/assets/font/KrungthaiFastWeb-Bold.woff',
+  display: 'swap',
+  variable: '--font-poppins',
+});
 
 export const metadata = {
   title: 'KTBL',
@@ -9,7 +16,7 @@ export const metadata = {
 /* tslint:disable:no-empty */
 async function RootLayout({ children }: { children?: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${myFont.variable} font-sans`}>
       <body suppressHydrationWarning={true}>
         <Navbar isHome={true} />
         {children}

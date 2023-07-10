@@ -1,13 +1,12 @@
 .bnProduct {
-  background-image: url('/assets/images/supper.graphic-ktbl01+04.jpg');
+  background-image: url('/assets/images/bg-product.png');
   background-repeat: no-repeat;
   background-size: cover;
-  clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
   padding-left: 80px;
   width: 100%;
-  /* height: 878px; */
   padding-bottom: 100px;
-  margin-top: 68px;
+  margin-top: 56px;
+  /* height: 49rem; */
 }
 .header {
   font-weight: 700;
@@ -25,6 +24,7 @@
 }
 .bnProduct h3 {
   color: #00a6e6;
+  font-size: 25px;
 }
 .bnProduct ul .itemTitle {
   color: #262626;
@@ -124,6 +124,21 @@
     clip-path: none;
     height: auto;
   } */
+  .breadcrumb {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    text-align: left;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+  }
+  .bnProduct h2 {
+    font-size: 44px;
+  }
+  .header {
+    display: none;
+  }
   .bnProduct {
     background: transparent;
     padding-left: 0;
@@ -136,7 +151,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 56px);
   }
   .button {
     width: 90%;
@@ -180,6 +195,7 @@
   }
   .description {
     width: 100%;
+    padding: 0 1rem;
   }
   .item {
     align-items: center;

@@ -2,61 +2,42 @@
 import styles from './styles.module.css';
 import PrimaryButton from '../Button';
 import Link from 'next/link';
-import { useInView } from 'react-intersection-observer';
+// import { useInView } from 'react-intersection-observer';
 import Breadcrumb from '@/app/shared/widgets/Breadcrumb';
+import BenifitSection from '../BenifitSection/BenifitSection';
 
 function ProductBaner() {
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-    rootMargin: '-300px 0px',
-  });
-
-  const detailList = [
-    {
-      title: 'อนุมัติง่าย รู้ผลไว ไม่ต้องค้ำประกัน',
-      content:
-        'เงื่อนไขของการเช่าที่สามารถยืดหยุ่นได้ตามประเภทธุรกิจ และกระบวนการในการพิจารณา รวดเร็วไม่ยุ่งยาก เป็นทางเลือกใหม่ ไม่ต้องใช้หลักทรัพย์ในการค้ำประกัน',
-    },
-    {
-      title: 'ค่าเช่าคงที่ตลอดอายุสัญญา',
-      content: 'ลดความเสี่ยงจากความผันผวนของอัตราดอกเบี้ย ช่วยเพิ่มประสิทธิภาพในการวางแผน ทางการเงินในอนาคตของกิจการ',
-    },
-    {
-      title: 'ลดค่าใช้จ่ายภาษี',
-      content: 'ผลประโยชน์ทางด้านภาษีสามารถใช้เป็นค่าใช้จ่ายในการคำนวนภาษีเงินได้นิติบุคคล (เฉพาะสัญญาเช่าดำเนินงาน)',
-    },
-    {
-      title: 'บริหารจัดการเงินทุนง่าย',
-      content:
-        'เพิ่มประสิทธิ์ภาพในการบริหารเงินทุนและกระแสเงินสด เป็นทางเลือกของแหล่งเงินทุน โดยที่ผู้เช่าสามารถเลี่ยงการลงทุนที่ต้องใช้เงินทุนจำนวนมากในการได้มาซึ่งทรัพย์สิน',
-    },
-  ];
+  // const { ref, inView } = useInView({
+  //   triggerOnce: false,
+  //   rootMargin: '-300px 0px',
+  // });
 
   return (
     <div>
-      <div className={styles.bnProduct}>
-        <div className={`${styles.block} relative`}>
-          <div>
+      <div className={`${styles.bnProduct}`}>
+        <div className={`${styles.block} container relative`}>
+          <div className={`${styles.breadcrumb}  `}>
             <Breadcrumb items={[{ text: `รถกระบะและรถยนต์นั่ง 4 ล้อทุกประเภท`, link: `/products` }]}></Breadcrumb>
           </div>
-          <div className={styles.header}>บริการเช่าแบบลีสซิ่ง</div>
+          <div className={styles.header}>บริการเช่ารถยนต์นั่ง 4 ล้อ ทุกประเภทเพื่อผู้ประกอบการ</div>
           <div>
-            <h2>รถยนต์นั่ง 4 ล้อทุกประเภท</h2>
+            <h2>ช่วยลดค่าใช้จ่าย </h2>
+            <h3>เพิ่มยอดการหักลดหย่อนภาษี</h3>
           </div>
           <div className={styles.description}>
-            ผลิตภัณฑ์สินเชื่อเช่ารถกระบะ หรือรถยนต์นั่ง 4 ล้อทุกประเภทแบบลีสซิ่งเพื่อธุรกิจมีให้เลือกทั้ง
-            รถใหม่และรถใช้แล้ว
+            ผลิตภัณฑ์สินเชื่อเช่ารถกระบะ หรือรถยนต์นั่ง 4 ล้อทุกประเภท
+            แบบลีสซิ่งเพื่อธุรกิจมีให้เลือกทั้งรถใหม่และรถใช้แล้ว
           </div>
-          <div className={styles.btnMobile}>
+          <div className={`${styles.btnMobile}`}>
             <PrimaryButton text="สมัครผลิตภัณฑ์" className={styles.button} />
           </div>
         </div>
 
-        <div className={styles.btnWeb}>
+        <div className={`${styles.btnWeb} mt-6`}>
           <PrimaryButton text="สมัครผลิตภัณฑ์" className={styles.button} />
         </div>
 
-        <div className={styles.blockItem}>
+        <div className={`${styles.blockItem} mt-6`}>
           <div className={styles.titleMobile}>
             <h3>รถยนต์นั่ง 4 ล้อทุกประเภท</h3>
           </div>
@@ -89,7 +70,7 @@ function ProductBaner() {
           </div>
         </div>
       </div>
-
+      <BenifitSection />
       <div className="flex justify-center ">
         <div className="container grid md:grid-cols-2 xs:grid-cols-1">
           <div className={styles.imageLeft}>
@@ -107,7 +88,7 @@ function ProductBaner() {
           </div>
         </div>
       </div>
-      <div className={`${styles.productInfo}   ${inView ? styles.inView : styles.inOut}`} ref={ref}>
+      {/* <div className={`${styles.productInfo}   ${inView ? styles.inView : styles.inOut}`} ref={ref}>
         <div className={styles.carMobile}>
           <img src="/assets/images/mobie_product.png" style={{ width: '100%', height: '25vh' }} alt="" />
         </div>
@@ -127,7 +108,7 @@ function ProductBaner() {
         </div>
         <img className={styles.car2} src="/assets/images/product_car2.png" alt="" />
         <img className={styles.car1} src="/assets/images/product_car1.png" alt="" />
-      </div>
+      </div> */}
     </div>
   );
 }
